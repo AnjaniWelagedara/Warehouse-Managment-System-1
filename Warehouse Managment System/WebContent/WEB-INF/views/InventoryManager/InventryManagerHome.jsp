@@ -8,7 +8,19 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-		<h1>Inventory Manager Home</h1>
+		<!-- page content begins here -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
