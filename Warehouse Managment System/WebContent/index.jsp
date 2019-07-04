@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="\WEB-INF\views\Admin\header.jsp"></jsp:include>
-	fsdfsdsg
-	
-	<jsp:include page="\WEB-INF\views\Admin\footer.jsp"></jsp:include>
+	<jsp:include page="WEB-INF\views\InventoryManager\InventryManagerHome.jsp"></jsp:include>
 	
 </body>
 </html>
