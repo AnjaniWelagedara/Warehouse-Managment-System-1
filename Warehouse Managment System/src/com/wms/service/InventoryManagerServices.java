@@ -45,12 +45,13 @@ public class InventoryManagerServices implements IInventoryManager {
 					connection.setAutoCommit(false);
 
 					inventory.setItemNo(itemNo);
-					ps.setString(CommonConstants.COLUMN_INDEX_ONE, classes.getClassID());
-					ps.setString(CommonConstants.COLUMN_INDEX_TWO, classes.getClassName());
-					ps.setString(CommonConstants.COLUMN_INDEX_THREE, classes.getYear());
-					ps.setString(CommonConstants.COLUMN_INDEX_FOUR, classes.getNoOfStudents());
-					ps.setString(CommonConstants.COLUMN_INDEX_FIVE, classes.getTeacher());
-					ps.setString(CommonConstants.COLUMN_INDEX_SIX, classes.getHall());
+					ps.setString(CommonConstants.COLUMN_INDEX_ONE, inventory.getItemNo());
+					ps.setString(CommonConstants.COLUMN_INDEX_TWO, inventory.getName());
+					ps.setString(CommonConstants.COLUMN_INDEX_THREE, inventory.getDescription());
+					ps.setString(CommonConstants.COLUMN_INDEX_FOUR, inventory.getWarrentyYear());
+					ps.setString(CommonConstants.COLUMN_INDEX_FIVE, inventory.getAddedDate());
+					ps.setString(CommonConstants.COLUMN_INDEX_SIX, inventory.getLocation());
+					ps.setString(CommonConstants.COLUMN_INDEX_SEVEN, inventory.getStatus());
 					ps.execute();
 					connection.commit();
 

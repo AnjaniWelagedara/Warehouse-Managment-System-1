@@ -6,12 +6,12 @@
 
 <query id="get_inventory_table_entry_count">
          <![CDATA[        
-            select * from Inventory;
+            select * from Inventory
         ]]>
 </query>
 
 <query id="add_inventory_table">
          <![CDATA[        
-            select * from Inventory;
+           
         ]]>
 </query>

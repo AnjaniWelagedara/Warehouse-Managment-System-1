@@ -52,6 +52,14 @@ public class AddItem extends HttpServlet {
 		inventory.setLocation(request.getParameter("location"));
 		inventory.setDescription(request.getParameter("description"));
 		
+		if(request.getParameter("employeeId") == null) {
+			inventory.setStatus("Allocated");
+		}
+		
+		else {
+			inventory.setStatus("Unallocated");
+		}
+		
 		IInventoryManager iInventoryManager = new InventoryManagerServices();
 		iInventoryManager.addItems(inventory);
 	}
