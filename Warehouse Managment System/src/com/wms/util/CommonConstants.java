@@ -78,9 +78,17 @@ public class CommonConstants {
 	
 	
 	
+	/**
+	 * @Student_ID : IT18178678
+	 * @Name : S.M.A.S.Senevirathne
+	 */
+	/** Constant for prefix of INventory table primary key */
+	public static final String INVENRTORY_PREFIX = "ITM-0";
 	
+	/** Constant for query id of get_inventory_table_entry_count in Query.xml */
+	public static final String QUERY_ID_GET_INVENTORY_TABLE_ENTRY_COUNT = "get_inventory_table_entry_count";
 	
-	
-	
+	/** Constant for query id of get_inventory_table_entry_count in Query.xml */
+	public static final String QUERY_ID_ADD_INVENTORY_TABLE = "add_inventory_table";
 	
 }

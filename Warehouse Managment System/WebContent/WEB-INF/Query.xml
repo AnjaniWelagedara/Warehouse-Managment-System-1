@@ -1,1 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- /** * @Student_ID : IT18178678 * @Name : S.M.A.S.Senevirathne */ -->
+
+
+<query id="get_inventory_table_entry_count">
+         <![CDATA[        
+            select * from Inventory;
+        ]]>
+</query>
+
+<query id="add_inventory_table">
+         <![CDATA[        
+            select * from Inventory;
+        ]]>
+</query>

@@ -81,4 +81,6 @@ public class Inventory {
 				+ ", status=" + status + "]";
 	}
 
+	
+
 }

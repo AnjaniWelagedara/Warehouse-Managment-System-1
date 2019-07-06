@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wms.model.Inventory;
+import com.wms.service.IInventoryManager;
+import com.wms.service.InventoryManagerServices;
+
 /**
  * Servlet implementation class AddItem
  */
@@ -36,6 +40,20 @@ public class AddItem extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		//create Inventory class object
+		Inventory inventory = new Inventory();
+		
+		//take values from Inventory.jsp page
+		inventory.setName(request.getParameter("itemName"));
+		inventory.setWarrentyYear(request.getParameter("warrentyDay"));
+		inventory.setAddedDate(request.getParameter("addedDay"));
+		inventory.setOwner(request.getParameter("employeeId"));
+		inventory.setLocation(request.getParameter("location"));
+		inventory.setDescription(request.getParameter("description"));
+		
+		IInventoryManager iInventoryManager = new InventoryManagerServices();
+		iInventoryManager.addItems(inventory);
 	}
 
 }
