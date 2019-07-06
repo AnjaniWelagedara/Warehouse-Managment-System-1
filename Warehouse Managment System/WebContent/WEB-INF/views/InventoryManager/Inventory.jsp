@@ -39,7 +39,7 @@
 						<div class="row mt-3 ml-5 mr-5">
 						
 							<table class="table table-hover">
-								<thead>
+								<thead class="p-3 mb-2 bg-primary text-white">
 									<tr>
 										<th scope="col">#</th>
 										<th scope="col">First</th>
@@ -80,7 +80,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header" style="background-color: blue;">
-          <h5 class="text-white" id="exampleModalCenterTitle">Add New Item</h5>
+        <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-plus mt-3 mb-2"></i> ADD NEW ITEM </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="color: white ">&times;</span>
           </button>
@@ -90,24 +90,24 @@
                             
                             <div class="content">
  								<div class="container-fluid">                         
-                                <form>
+                                <form method="POST" action="AddItem">
                                     <div class="row">
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <i class="fas fa-list-alt text-primary mt-3 mb-2"> Item Name</i>
-                                                <input type="text" class="form-control"  placeholder="Item Name">
+                                                <input type="text" class="form-control"  placeholder="Enter Item Name">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                <i class="far fa-calendar-check text-primary mt-3 mb-2"> Warranty Day</i>
-                                                <input type="email" class="form-control" placeholder="Email">
+                                                <input type="date" class="form-control" >
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <i class="far fa-calendar-plus text-primary mt-3 mb-2"> Added Date</i>
-                                                <input type="text" class="form-control" placeholder="Username" >
+                                                <input type="date" class="form-control" >
                                             </div>
                                         </div>
                                         
@@ -117,13 +117,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
 												<i class="fas fa-user text-primary mt-3 mb-2"> Owner</i>
-                                                <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                                <input type="text" class="form-control" placeholder="Company" value="Employee ID">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <i class="fas fa-map-marker-alt text-primary mt-3 mb-2"> Location</i>
-                                                <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                                <input type="text" class="form-control" placeholder="Last Name" value="Storage">
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@
                                         </div>
                                     </div>
 									<div class="row">
-                                    <button type="submit" class="btn btn-primary  pull-right">Add Item</button>
+                                    <button type="submit" class="btn btn-primary  pull-right"><i class="fas fa-plus-circle "></i> Add Item</button>
                                     </div>
                                 </form>
                                 </div>  
