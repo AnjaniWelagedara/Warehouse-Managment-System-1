@@ -75,20 +75,22 @@
 										<td><%=inventory.getStatus()%></td>
 										<td><%=inventory.getItemNo()%></td>
 										<td>
-											
-												 <button  class="btn btn-info btn-circle">
+												<div class="row">
+												 <button  class="btn btn-info btn-circle mr-1">
                     								<i class="fas fa-eye"></i>
                   								 </button>
                   
                   
-								                  <button type="submit" class="btn btn-success btn-circle">
+								                  <button type="submit" class="btn btn-success btn-circle mr-1">
 								                    <i class="far fa-edit"></i>
 								                  </button>
-                  
-								                  <button type="submit" class="btn btn-danger btn-circle">
+                  								<form action="deleteItemByIdServlet" method="POST">
+                  								  <input type="hidden" name="itemNo" value="<%=inventory.getItemNo()%>">
+								                  <button type="submit" class="btn btn-danger btn-circle ">
 								                    <i class="fas fa-trash"></i>
 								                  </button>
-                  
+								                 </form>
+                  								</div>
                  					 </td>
 										
 									</tr>

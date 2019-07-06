@@ -16,12 +16,17 @@
             values(?,?,?,?,?,?,?,?);
         ]]>
 </query>
-delete_all_items
+
 <query id="delete_all_items">
          <![CDATA[        
             delete from Inventory;
         ]]>
 </query>
 
+<query id="delete_item_by_id">
+         <![CDATA[        
+           delete from Inventory where itemNo = ?;
+        ]]>
+</query>
 
 </Querys>

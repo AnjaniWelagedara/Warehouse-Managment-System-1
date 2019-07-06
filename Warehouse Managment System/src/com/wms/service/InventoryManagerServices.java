@@ -167,9 +167,6 @@ public class InventoryManagerServices implements IInventoryManager {
 			connection = DBConnectionUtil.getDBConnection();
 
 			ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_DELETE_ALL_ITEMS));
-
-			
-
 			ps.execute();
 
 		} catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
@@ -191,5 +188,36 @@ public class InventoryManagerServices implements IInventoryManager {
 		}
 	}
 
+	@Override
+	public void deleteItemById(String itemNo) {
+		// TODO Auto-generated method stub
+		try {
+			
+			connection = DBConnectionUtil.getDBConnection();
+			
+			ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_DELETE_FROM_INVENTORY));
+
+			ps.setString(CommonConstants.COLUMN_INDEX_ONE, itemNo);
+
+			ps.execute();
+
+		} catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close prepared statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (ps != null) {
+					ps.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				log.log(Level.SEVERE, e.getMessage());
+			}
+		}
+	}
 
 }

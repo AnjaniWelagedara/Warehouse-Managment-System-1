@@ -21,4 +21,10 @@ public interface IInventoryManager {
 	 * delete all Inventory Items
 	 */
 	public void deleteAllItems();
+	
+	/**
+	 * Add assignments
+	 * @param inventory
+	 */
+	public void deleteItemById(String itemNo);
 }
