@@ -74,19 +74,22 @@
 										<td><b><%=inventory.getName()%></b></td>
 										<td><%=inventory.getStatus()%></td>
 										<td><%=inventory.getItemNo()%></td>
-										<td><button  class="btn btn-info btn-circle">
-                    <i class="fas fa-eye"></i>
-                  </button>
+										<td>
+											
+												 <button  class="btn btn-info btn-circle">
+                    								<i class="fas fa-eye"></i>
+                  								 </button>
                   
-                  <a href="#" class="btn btn-success btn-circle">
-                    <i class="far fa-edit"></i>
-                  </a>
                   
-                  <a href="#" class="btn btn-danger btn-circle">
-                    <i class="fas fa-trash"></i>
-                  </a>
+								                  <button type="submit" class="btn btn-success btn-circle">
+								                    <i class="far fa-edit"></i>
+								                  </button>
                   
-                  </td>
+								                  <button type="submit" class="btn btn-danger btn-circle">
+								                    <i class="fas fa-trash"></i>
+								                  </button>
+                  
+                 					 </td>
 										
 									</tr>
 									
