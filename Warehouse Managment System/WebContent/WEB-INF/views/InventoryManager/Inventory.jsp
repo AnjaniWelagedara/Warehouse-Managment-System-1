@@ -28,7 +28,7 @@
 						</div>
 						<div class="row ml-2">
 
-							<button class="btn btn-primary col-2 mr-2">
+							<button class="btn btn-primary col-2 mr-2" data-toggle="modal" data-target="#exampleModalCenter">
 								<i class="fas fa-plus-circle"> Add Item</i>
 							</button>
 
@@ -75,11 +75,94 @@
 				</div>
 			</div>
 
+	 <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: blue;">
+          <h5 class="text-white" id="exampleModalCenterTitle">Add New Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: white ">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="card">
+                            
+                            <div class="content">
+ 								<div class="container-fluid">                         
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <i class="fas fa-list-alt text-primary mt-3 mb-2"> Item Name</i>
+                                                <input type="text" class="form-control"  placeholder="Item Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                               <i class="far fa-calendar-check text-primary mt-3 mb-2"> Warranty Day</i>
+                                                <input type="email" class="form-control" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <i class="far fa-calendar-plus text-primary mt-3 mb-2"> Added Date</i>
+                                                <input type="text" class="form-control" placeholder="Username" >
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+												<i class="fas fa-user text-primary mt-3 mb-2"> Owner</i>
+                                                <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <i class="fas fa-map-marker-alt text-primary mt-3 mb-2"> Location</i>
+                                                <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                   
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <i class="far fa-sticky-note text-primary mt-3 mb-2"> Item Description</i>
+                                                <textarea rows="3" class="form-control" placeholder="Here can be your description" value="Mike"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="row">
+                                    <button type="submit" class="btn btn-primary  pull-right">Add Item</button>
+                                    </div>
+                                </form>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+        
+        
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  </div>
+	
 
-		</div>
-	</div>
+	
+
 
 
 
