@@ -107,5 +107,89 @@ public class InventoryManagerServices implements IInventoryManager {
 		}
 		return arrayList;
 	}
+	
+	
+	@Override
+	public ArrayList<Inventory> getInventoryList() {
+
+		ArrayList<Inventory> list = new ArrayList<Inventory>();
+
+		try {
+			connection = DBConnectionUtil.getDBConnection();
+
+			ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_INVENTORY_TABLE_ENTRY_COUNT));
+
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				Inventory inventory = new Inventory();
+				inventory.setItemNo(rs.getString(1));
+				inventory.setName(rs.getString(2));
+				inventory.setDescription(rs.getString(3));
+				inventory.setWarrentyYear(rs.getString(4));
+				inventory.setAddedDate(rs.getString(5));
+				inventory.setLocation(rs.getString(6));
+				inventory.setStatus(rs.getString(7));
+				inventory.setOwner(Integer.parseInt(rs.getString(8)));
+				
+				
+				list.add(inventory);
+
+			}
+
+		} catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close prepared statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (ps != null) {
+					ps.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				log.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return list;
+
+	}
+	
+	@Override
+	public void deleteAllItems() {
+		// TODO Auto-generated method stub
+		try {
+
+			connection = DBConnectionUtil.getDBConnection();
+
+			ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_DELETE_ALL_ITEMS));
+
+			
+
+			ps.execute();
+
+		} catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close prepared statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (ps != null) {
+					ps.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				log.log(Level.SEVERE, e.getMessage());
+			}
+		}
+	}
+
 
 }

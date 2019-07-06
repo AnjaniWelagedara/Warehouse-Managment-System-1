@@ -1,3 +1,8 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="com.wms.model.Inventory"%>
+<%@page import="java.util.List"%>
+<%@page import="com.wms.service.InventoryManagerServices"%>
+<%@page import="com.wms.service.IInventoryManager"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -32,40 +37,64 @@
 								<i class="fas fa-plus-circle"> Add Item</i>
 							</button>
 
-							<button class="btn btn-danger col-2">
+							<button class="btn btn-danger col-2" data-toggle="modal" data-target="#deleteAll">
 								<i class="fas fa-minus-circle"> Delete All</i>
 							</button>
 						</div>
 						<div class="row mt-3 ml-5 mr-5">
 						
+						
+						<%
+							IInventoryManager iInventoryManager = new InventoryManagerServices();
+							List<Inventory> itemList= iInventoryManager.getInventoryList();
+							Iterator<Inventory> it_list = itemList.iterator();
+						%>
+						
 							<table class="table table-hover">
 								<thead class="p-3 mb-2 bg-primary text-white">
 									<tr>
-										<th scope="col">#</th>
-										<th scope="col">First</th>
-										<th scope="col">Last</th>
-										<th scope="col">Handle</th>
+										<th scope="col">Item No</th>
+										<th scope="col">Name</th>
+										<th scope="col">Status</th>
+										<th scope="col">Condition</th>
+										<th scope="col">Actions</th>
 									</tr>
 								</thead>
+								
+								<%
+								
+									while (it_list.hasNext()) {
+										Inventory inventory =  new Inventory();
+										inventory = it_list.next();
+								%>
+							
 								<tbody>
 									<tr>
-										<th scope="row">1</th>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
+										<th scope="row"><%=inventory.getItemNo()%></th>
+										<td><b><%=inventory.getName()%></b></td>
+										<td><%=inventory.getStatus()%></td>
+										<td><%=inventory.getItemNo()%></td>
+										<td><button  class="btn btn-info btn-circle">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  
+                  <a href="#" class="btn btn-success btn-circle">
+                    <i class="far fa-edit"></i>
+                  </a>
+                  
+                  <a href="#" class="btn btn-danger btn-circle">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                  
+                  </td>
+										
 									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td colspan="2">Larry the Bird</td>
-										<td>@twitter</td>
-									</tr>
+									
 								</tbody>
+								
+								<%
+									}
+								%>
 							</table>
 
 						</div>
@@ -75,7 +104,7 @@
 				</div>
 			</div>
 
-	 <!-- Modal -->
+	 <!-- Modal for add items -->
   <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -137,8 +166,10 @@
                                             </div>
                                         </div>
                                     </div>
-									<div class="row">
-                                    <button type="submit" class="btn btn-primary  pull-right"><i class="fas fa-plus-circle "></i> Add Item</button>
+									<div class="row">	
+										<div class="">
+                                    		<button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle "></i> Add Item</button>
+                                    	</div>
                                     </div>
                                 </form>
                                 </div>  
@@ -152,12 +183,48 @@
         </div>
       </div>
     </div>
+    
+    
+    
+    
+     <!-- Modal for add items -->
+  <div class="modal fade bd-example-modal-lg" id="deleteAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered ml-10" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: red;">
+        <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-minus-circle"></i> ARE YOU WANT TO DELETE ALL ITEMS</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: white ">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+        	<div class="row ml-5">
+        		<div class="mr-5">
+        		<form action="deleteAllItemsServlet" method="POST">
+        		<button type="submit"  class="btn btn-danger btn-icon-split ">
+                    <span class="icon text-white-100">
+                      <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Yes, I'm Sure</span>
+                  </button></form>
+               </div>   
+                  <div class="ml-2">
+                  <button  class="btn btn-info btn-icon-split " data-dismiss="modal">
+                    <span class="icon text-white-100">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">No, I'm Sorry</span>
+                  </button>
+                 </div> 
+           </div>
+      </div>
+    </div>
+    
+    
+   </div> 
+ </div>   
   </div>
-  
-  
-  
-  
-  
   </div>
 	
 

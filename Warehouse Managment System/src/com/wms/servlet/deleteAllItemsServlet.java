@@ -9,21 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wms.model.Inventory;
 import com.wms.service.IInventoryManager;
 import com.wms.service.InventoryManagerServices;
 
 /**
- * Servlet implementation class AddItem
+ * Servlet implementation class deleteAllItemsServlet
  */
-@WebServlet("/AddItem")
-public class AddItem extends HttpServlet {
+@WebServlet("/deleteAllItemsServlet")
+public class deleteAllItemsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddItem() {
+    public deleteAllItemsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,28 +42,9 @@ public class AddItem extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		//create Inventory class object
-		Inventory inventory = new Inventory();
-		
-		//take values from Inventory.jsp page
-		inventory.setName(request.getParameter("itemName"));
-		inventory.setWarrentyYear(request.getParameter("warrentyDay"));
-		inventory.setAddedDate(request.getParameter("addedDay"));
-		inventory.setOwner(Integer.parseInt((request.getParameter("employeeId"))));
-		inventory.setLocation(request.getParameter("location"));
-		inventory.setDescription(request.getParameter("description"));
-		
-		if(!(request.getParameter("employeeId") == null)) {
-			inventory.setStatus("Allocated");
-		}
-		
-		else {
-			inventory.setStatus("Unallocated");
-		}
-		
-		IInventoryManager iInventoryManager = new InventoryManagerServices();
-		iInventoryManager.addItems(inventory);
-		
+		//delete all items from Inventory Table
+		IInventoryManager iInventoryManager =  new InventoryManagerServices();
+		iInventoryManager.deleteAllItems();
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/Inventory.jsp");
 		dispatcher.forward(request, response);

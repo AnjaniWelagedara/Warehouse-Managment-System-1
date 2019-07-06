@@ -1,5 +1,7 @@
 package com.wms.service;
 
+import java.util.ArrayList;
+
 import com.wms.model.Inventory;
 
 public interface IInventoryManager {
@@ -9,4 +11,14 @@ public interface IInventoryManager {
 	 * @param inventory
 	 */
 	public void addItems(Inventory inventory);
+	
+	/**
+	 * get all in Inventory table
+	 */
+	public ArrayList<Inventory> getInventoryList();
+	
+	/**
+	 * delete all Inventory Items
+	 */
+	public void deleteAllItems();
 }

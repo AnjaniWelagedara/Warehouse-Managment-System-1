@@ -6,7 +6,7 @@
 
 <query id="get_inventory_table_entry_count">
          <![CDATA[        
-            select * from Inventory
+            select * from Inventory;
         ]]>
 </query>
 
@@ -16,5 +16,12 @@
             values(?,?,?,?,?,?,?,?);
         ]]>
 </query>
+delete_all_items
+<query id="delete_all_items">
+         <![CDATA[        
+            delete from Inventory;
+        ]]>
+</query>
+
 
 </Querys>

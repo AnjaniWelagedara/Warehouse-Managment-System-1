@@ -70,4 +70,7 @@ public class CommonConstants {
 	/** Constant for query id of add_inventory_table in Query.xml */
 	public static final String QUERY_ID_ADD_INVENTORY_TABLE = "add_inventory_table";
 	
+	
+	/** Constant for query id of add_inventory_table in Query.xml */
+	public static final String QUERY_ID_DELETE_ALL_ITEMS = "delete_all_items";
 }
