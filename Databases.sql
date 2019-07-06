@@ -18,3 +18,14 @@ create table QuotationRequestsDetails(
 	constraint QRDPK primary key (quoaDeId),
     constraint QRDFK foreign key (quoaId) references QuotationRequests(quoaId)
 );
+
+create table Inventory(
+	itemNo varchar(20),
+    itemName varchar(100),
+    itemDescription varchar(200),
+    warrenty date,
+    addedDate datetime default now(),
+    location varchar(50),
+    itemStatus varchar(10) default "Unallocate",
+    constraint INPK primary key (itemNo)
+)
