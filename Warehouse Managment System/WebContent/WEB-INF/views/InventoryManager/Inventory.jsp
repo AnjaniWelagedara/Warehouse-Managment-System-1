@@ -117,7 +117,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
 												<i class="fas fa-user text-primary mt-3 mb-2"> Owner</i>
-                                                <input type="text" class="form-control" placeholder="Employee ID" name="employeeId">
+                                                <input type="number" class="form-control" placeholder="Employee ID" name="employeeId">
                                             </div>
                                         </div>
                                         <div class="col-md-6">

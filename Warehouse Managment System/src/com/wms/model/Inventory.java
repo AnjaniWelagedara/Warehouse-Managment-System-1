@@ -6,7 +6,7 @@ public class Inventory {
 	private String description;
 	private String warrentyYear;
 	private String addedDate;
-	private String owner;
+	private int owner;
 	private String location;
 	private String status;
 
@@ -50,11 +50,11 @@ public class Inventory {
 		this.addedDate = addedDate;
 	}
 
-	public String getOwner() {
+	public int getOwner() {
 		return owner;
 	}
 
-	public void setOwner(String owner) {
+	public void setOwner(int owner) {
 		this.owner = owner;
 	}
 

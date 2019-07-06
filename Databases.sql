@@ -24,8 +24,15 @@ create table Inventory(
     itemName varchar(100),
     itemDescription varchar(200),
     warrenty date,
-    addedDate datetime default now(),
+    addedDate date,
     location varchar(50),
     itemStatus varchar(10) default "Unallocate",
+    owner integer,
     constraint INPK primary key (itemNo)
-)
+);
+
+insert into Inventory(itemNo, itemName, itemDescription, warrenty, addedDate, location, itemStatus, owner ) values('dfgh','fdvdf','dfvdf','2019-07-06','2019-07-06','sdd','sfds',1);
+drop table Inventory;
+select * from Inventory;
+delete from Inventory;
+

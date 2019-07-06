@@ -45,6 +45,7 @@ public class InventoryManagerServices implements IInventoryManager {
 					connection.setAutoCommit(false);
 
 					inventory.setItemNo(itemNo);
+					System.out.println(itemNo);
 					ps.setString(CommonConstants.COLUMN_INDEX_ONE, inventory.getItemNo());
 					ps.setString(CommonConstants.COLUMN_INDEX_TWO, inventory.getName());
 					ps.setString(CommonConstants.COLUMN_INDEX_THREE, inventory.getDescription());
@@ -52,6 +53,7 @@ public class InventoryManagerServices implements IInventoryManager {
 					ps.setString(CommonConstants.COLUMN_INDEX_FIVE, inventory.getAddedDate());
 					ps.setString(CommonConstants.COLUMN_INDEX_SIX, inventory.getLocation());
 					ps.setString(CommonConstants.COLUMN_INDEX_SEVEN, inventory.getStatus());
+					ps.setInt(CommonConstants.COLUMN_INDEX_EIGHT, inventory.getOwner());
 					ps.execute();
 					connection.commit();
 

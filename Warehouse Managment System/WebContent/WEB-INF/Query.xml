@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<Querys>
 
 <!-- /** * @Student_ID : IT18178678 * @Name : S.M.A.S.Senevirathne */ -->
 
@@ -12,6 +12,9 @@
 
 <query id="add_inventory_table">
          <![CDATA[        
-           
+            insert into Inventory(itemNo, itemName, itemDescription, warrenty, addedDate, location, itemStatus, owner ) 
+            values(?,?,?,?,?,?,?,?);
         ]]>
 </query>
+
+</Querys>
