@@ -34,5 +34,5 @@ create table Inventory(
 insert into Inventory(itemNo, itemName, itemDescription, warrenty, addedDate, location, itemStatus, owner ) values('dfgh','fdvdf','dfvdf','2019-07-06','2019-07-06','sdd','sfds',1);
 drop table Inventory;
 select * from Inventory;
-delete from Inventory;
+delete from Inventory where itemNo = ?;
 
