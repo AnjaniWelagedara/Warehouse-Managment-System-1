@@ -1,3 +1,6 @@
+<%@page import="com.wms.model.StringToDate"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.sql.Date"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.wms.model.Inventory"%>
 <%@page import="java.util.List"%>
@@ -72,21 +75,45 @@
 									<tr>
 										<th scope="row"><%=inventory.getItemNo()%></th>
 										<td><b><%=inventory.getName()%></b></td>
-										<td><%=inventory.getStatus()%></td>
-										<td><%=inventory.getItemNo()%></td>
+										<td><%if(inventory.getStatus().equals("Allocated")){%>
+											
+											<span class="badge badge-success">Allocated</span>
+										<% 
+											}else{
+										%>
+										
+										<span class="badge badge-info">Unallocated</span>
+										
+										<%
+											}
+										%>
+										
+										
+										
+										
+										
+										
+										
+										</td>
+										
+										<%
+											
+											 
+										%>
+										<td><%=inventory.getWarrentyYear() %></td>
 										<td>
 												<div class="row">
-												 <button  class="btn btn-info btn-circle mr-1">
+												 <button  class="btn btn-info btn-circle mr-1 btn-sm">
                     								<i class="fas fa-eye"></i>
                   								 </button>
                   
                   
-								                  <button type="submit" class="btn btn-success btn-circle mr-1">
+								                  <button type="submit" class="btn btn-success btn-circle mr-1 btn-sm">
 								                    <i class="far fa-edit"></i>
 								                  </button>
                   								<form action="deleteItemByIdServlet" method="POST">
                   								  <input type="hidden" name="itemNo" value="<%=inventory.getItemNo()%>">
-								                  <button type="submit" class="btn btn-danger btn-circle ">
+								                  <button type="submit" class="btn btn-danger btn-circle btn-sm">
 								                    <i class="fas fa-trash"></i>
 								                  </button>
 								                 </form>
