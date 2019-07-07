@@ -50,20 +50,23 @@ public class AddItem extends HttpServlet {
 		inventory.setName(request.getParameter("itemName"));
 		inventory.setWarrentyYear(request.getParameter("warrentyDay"));
 		inventory.setAddedDate(request.getParameter("addedDay"));
-		inventory.setOwner(Integer.parseInt((request.getParameter("employeeId"))));
+		inventory.setOwner(request.getParameter("employeeId"));
 		inventory.setLocation(request.getParameter("location"));
 		inventory.setDescription(request.getParameter("description"));
 		
-		if(!(request.getParameter("employeeId") == null)) {
+		if(!((request.getParameter("employeeId").isEmpty()))) {
 			inventory.setStatus("Allocated");
+			inventory.setOwner(request.getParameter("employeeId"));
 		}
 		
 		else {
 			inventory.setStatus("Unallocated");
+			inventory.setOwner("None");
 		}
 		
 		IInventoryManager iInventoryManager = new InventoryManagerServices();
 		iInventoryManager.addItems(inventory);
+		System.out.println(inventory);
 		
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/Inventory.jsp");

@@ -53,7 +53,7 @@ public class InventoryManagerServices implements IInventoryManager {
 					ps.setString(CommonConstants.COLUMN_INDEX_FIVE, inventory.getAddedDate());
 					ps.setString(CommonConstants.COLUMN_INDEX_SIX, inventory.getLocation());
 					ps.setString(CommonConstants.COLUMN_INDEX_SEVEN, inventory.getStatus());
-					ps.setInt(CommonConstants.COLUMN_INDEX_EIGHT, inventory.getOwner());
+					ps.setString(CommonConstants.COLUMN_INDEX_EIGHT, inventory.getOwner());
 					ps.execute();
 					connection.commit();
 
@@ -131,7 +131,7 @@ public class InventoryManagerServices implements IInventoryManager {
 				inventory.setAddedDate(rs.getString(5));
 				inventory.setLocation(rs.getString(6));
 				inventory.setStatus(rs.getString(7));
-				inventory.setOwner(Integer.parseInt(rs.getString(8)));
+				inventory.setOwner(rs.getString(8));
 				
 				
 				list.add(inventory);

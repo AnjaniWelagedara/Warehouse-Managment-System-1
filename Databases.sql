@@ -26,8 +26,8 @@ create table Inventory(
     warrenty date,
     addedDate date,
     location varchar(50),
-    itemStatus varchar(10) default "Unallocate",
-    owner integer,
+    itemStatus varchar(20) default "Unallocate",
+    owner varchar(20),
     constraint INPK primary key (itemNo)
 );
 

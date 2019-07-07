@@ -192,7 +192,7 @@
     
     
     
-     <!-- Modal for add items -->
+     <!-- Modal for delete all items -->
   <div class="modal fade bd-example-modal-lg" id="deleteAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ml-10" role="document">
       <div class="modal-content">
