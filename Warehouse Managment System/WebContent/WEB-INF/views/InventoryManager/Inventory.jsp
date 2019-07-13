@@ -1,4 +1,3 @@
-<%@page import="com.wms.model.StringToDate"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.util.Iterator"%>
@@ -13,6 +12,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -44,7 +45,7 @@
 								<i class="fas fa-minus-circle"> Delete All</i>
 							</button>
 						</div>
-						<div class="row mt-3 ml-5 mr-5">
+						<div class="row mt-3 ml-5 mr-5  ">
 						
 						
 						<%
@@ -72,9 +73,10 @@
 								%>
 							
 								<tbody>
-									<tr>
+									<tr id="<%= inventory.getItemNo() %>">
 										<th scope="row"><%=inventory.getItemNo()%></th>
-										<td><b><%=inventory.getName()%></b></td>
+										<td data-target="name"><b><%=inventory.getName()%></b></td>
+										<td data-target="date" style="display: none;"><b><%=inventory.getWarrentyYear()%></b></td>
 										<td><%if(inventory.getStatus().equals("Allocated")){%>
 											
 											<span class="badge badge-success">Allocated</span>
@@ -108,9 +110,12 @@
                   								 </button>
                   
                   
-								                  <button type="submit" class="btn btn-success btn-circle mr-1 btn-sm">
+<!-- 								                  <button type="submit" class="btn btn-success btn-circle mr-1 btn-sm"  data-toggle="modal" data-target="#update" data-whatever="@getbootstrap"  >
 								                    <i class="far fa-edit"></i>
-								                  </button>
+								                  </button> -->
+								                  
+								                  <a href="#" data-role="update" class="btn btn-success btn-circle mr-1 btn-sm" data-id="<%= inventory.getItemNo() %>"><i class="far fa-edit"></i></a>
+								                  
                   								<form action="deleteItemByIdServlet" method="POST">
                   								  <input type="hidden" name="itemNo" value="<%=inventory.getItemNo()%>">
 								                  <button type="submit" class="btn btn-danger btn-circle btn-sm">
@@ -255,14 +260,115 @@
     
     
    </div> 
- </div>   
+ </div> 
+ 
+ 
+ 
+   <div class="modal fade bd-example-modal-lg" id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: blue;">
+        <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-plus mt-2"></i> ADD NEW ITEM </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: white ">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="card">
+                            
+                            <div class="content">
+ 								<div class="container-fluid">                         
+                                <form method="POST" action="AddItem">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <i class="fas fa-list-alt text-primary mt-3 mb-2"> Item Name</i>
+                                                <input type="text" class="form-control"  placeholder="Enter Item Name" name="itemName" id="mId">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                               <i class="far fa-calendar-check text-primary mt-3 mb-2"> Warranty Day</i>
+                                                <input type="date" class="form-control" name="warrentyDay" id="wrrDay">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <i class="far fa-calendar-plus text-primary mt-3 mb-2"> Added Date</i>
+                                                <input type="date" class="form-control" name="addedDay">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+												<i class="fas fa-user text-primary mt-3 mb-2"> Owner</i>
+                                                <input type="number" class="form-control" placeholder="Employee ID" name="employeeId">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <i class="fas fa-map-marker-alt text-primary mt-3 mb-2"> Location</i>
+                                                <input type="text" class="form-control" placeholder="Storage" name="location">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <i class="far fa-sticky-note text-primary mt-3 mb-2"> Item Description</i>
+                                                <textarea rows="3" class="form-control" placeholder="Here can be your description" name="description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="row">	
+										<div class="">
+                                    		<button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle "></i> Add Item</button>
+                                    	</div>
+                                    </div>
+                                </form>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+        
+        
+        
+        
+        </div>
+      </div>
+    </div>
+ 
+ 
+ 
+ 
+  
   </div>
   </div>
 	
 
 	
 
+<script>
+$(document).ready(function(){
 
+    $(document).on('click','a[data-role=update]',function(){
+  	 
+    	var id  = $(this).data('id');
+        var firstName  = $('#'+id).children('td[data-target=name]').text();
+        var wrDay  = $('#'+id).children('td[data-target=date]').text();
+
+        $('#mId').val(firstName);
+        $('#wrrDay').val(wrDay);
+        $('#update').modal('toggle');
+  	  
+    })
+});
+</script>
 
 
 

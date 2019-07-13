@@ -36,3 +36,25 @@ drop table Inventory;
 select * from Inventory;
 delete from Inventory where itemNo = ?;
 
+DELIMITER //  CREATE PROCEDURE dateDiffernced(IN itemNo1 VARCHAR(20), OUT noOfTotalDays INT)
+BEGIN
+	declare warrDay date;
+    declare insertDay date;
+	select warrDay = warrenty, insertDay = addedDate from Inventory where itemNo = itemNo1;
+    
+	SELECT DATEDIFF(warrDay, insertDay) as 'result';
+END//
+DELIMITER ;
+
+
+DELIMITER //  
+CREATE PROCEDURE ToalDay(IN ItemNO VARCHAR(20), OUT totalDays INT)
+BEGIN
+	declare wrDay date;
+    declare adDay date;
+    select wrDay = warrenty ,adDay = addedDate from Inventory where itemNo = ItemNO;
+    SELECT totalDays = DATEDIFF('2020-10-30', '2020-10-01');
+END//
+DELIMITER ;
+
+call ToalDay('ITM-01',@totalDays);
