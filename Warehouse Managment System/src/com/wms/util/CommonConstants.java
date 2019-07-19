@@ -75,4 +75,8 @@ public class CommonConstants {
 	
 	/** Constant for query id of delete_item_by_id in Query.xml */
 	public static final String QUERY_ID_DELETE_FROM_INVENTORY = "delete_item_by_id";
+	
+	/** Constant for query id of get_total_days in Query.xml */
+	public static final String QUERY_ID_GET_TOTAL_DAYS = "get_total_days";
+	
 }

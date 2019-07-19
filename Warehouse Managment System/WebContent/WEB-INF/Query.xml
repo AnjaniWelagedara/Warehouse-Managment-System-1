@@ -29,4 +29,10 @@
         ]]>
 </query>
 
+<query id="delete_item_by_id">
+         <![CDATA[        
+          {call ToalDay(?,?)}
+        ]]>
+
+
 </Querys>
