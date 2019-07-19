@@ -50,6 +50,7 @@
 						
 						<%
 							IInventoryManager iInventoryManager = new InventoryManagerServices();
+							int totalDays;
 							List<Inventory> itemList= iInventoryManager.getInventoryList();
 							Iterator<Inventory> it_list = itemList.iterator();
 						%>
@@ -70,6 +71,7 @@
 									while (it_list.hasNext()) {
 										Inventory inventory =  new Inventory();
 										inventory = it_list.next();
+										totalDays = iInventoryManager.getTotalDays(inventory.getItemNo());
 								%>
 							
 								<tbody>
@@ -102,7 +104,7 @@
 											
 											 
 										%>
-										<td><%=inventory.getWarrentyYear() %></td>
+										<td><%=totalDays%></td>
 										<td>
 												<div class="row">
 												 <button  class="btn btn-info btn-circle mr-1 btn-sm">

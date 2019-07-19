@@ -50,11 +50,23 @@ DELIMITER ;
 DELIMITER //  
 CREATE PROCEDURE ToalDay(IN ItemNO VARCHAR(20), OUT totalDays INT)
 BEGIN
-	declare wrDay date;
-    declare adDay date;
-    select wrDay = warrenty ,adDay = addedDate from Inventory where itemNo = ItemNO;
-    SELECT totalDays = DATEDIFF('2020-10-30', '2020-10-01');
+    select DATEDIFF(warrenty, addedDate) from Inventory where itemNo = ItemNO;
 END//
 DELIMITER ;
 
-call ToalDay('ITM-01',@totalDays);
+call ToalDaysss('ITM-01',@totalDays);
+
+SELECT DATEDIFF('2020-10-30', '2020-10-28') AS 'Result';
+
+select * from inventory;
+
+DELIMITER //  
+create view showadd(wrr,addaa)
+as
+begin 
+	declare wrDay date;
+    declare adDay date;
+    select wrDay = warrenty ,adDay = addedDate from Inventory where itemNo = ItemNO;
+END//
+DELIMITER ;
+select warrenty ,addedDate,DATEDIFF(warrenty, addedDate)from Inventory;

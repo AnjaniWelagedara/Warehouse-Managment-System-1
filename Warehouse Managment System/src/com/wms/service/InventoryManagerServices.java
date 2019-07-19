@@ -5,16 +5,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLType;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-
+import com.mysql.jdbc.CallableStatement;
 import com.wms.model.Inventory;
 import com.wms.util.CommonConstants;
 import com.wms.util.CommonFunctions;
@@ -32,6 +34,8 @@ public class InventoryManagerServices implements IInventoryManager {
 	private static PreparedStatement ps;
 
 	private static ResultSet rs;
+	
+	CallableStatement stmt = null;
 	@Override
 	public void addItems(Inventory inventory) {
 		// TODO Auto-generated method stub
@@ -219,5 +223,40 @@ public class InventoryManagerServices implements IInventoryManager {
 			}
 		}
 	}
+	
+	@Override
+	public int getTotalDays(String itemNo) {
+		// TODO Auto-generated method stub
+		int totalDays = 0;
+		try {
+			
+			connection = DBConnectionUtil.getDBConnection();
+			stmt = (CallableStatement) connection.prepareCall("{call ToalDay(?,?)}");
+			stmt.setString(1, itemNo);
+			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
+			stmt.execute();
+			totalDays = stmt.getInt(2);
+			
 
+		} catch (SQLException | ClassNotFoundException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close prepared statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (ps != null) {
+					ps.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				log.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		
+		return totalDays;
+	}
+	
 }
