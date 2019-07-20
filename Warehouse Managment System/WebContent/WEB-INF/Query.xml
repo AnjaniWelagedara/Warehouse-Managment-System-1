@@ -29,10 +29,16 @@
         ]]>
 </query>
 
-<query id="delete_item_by_id">
+<query id="get_total_days">
          <![CDATA[        
           {call ToalDay(?,?)}
         ]]>
+</query>
 
+<query id="get_remaing_days">
+         <![CDATA[        
+          {call GetRemaingDays(?,?)}
+        ]]>
+</query>
 
 </Querys>

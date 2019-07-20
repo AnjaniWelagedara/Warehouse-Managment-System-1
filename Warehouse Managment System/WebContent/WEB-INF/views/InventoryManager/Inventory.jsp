@@ -50,7 +50,8 @@
 						
 						<%
 							IInventoryManager iInventoryManager = new InventoryManagerServices();
-							int totalDays;
+							int totalDays, remaingDays;
+							double condition;
 							List<Inventory> itemList= iInventoryManager.getInventoryList();
 							Iterator<Inventory> it_list = itemList.iterator();
 						%>
@@ -72,6 +73,8 @@
 										Inventory inventory =  new Inventory();
 										inventory = it_list.next();
 										totalDays = iInventoryManager.getTotalDays(inventory.getItemNo());
+										remaingDays = iInventoryManager.getRemaingDays(inventory.getItemNo());
+										/* condition = (remaingDays / totalDays) * 100; */
 								%>
 							
 								<tbody>
@@ -104,7 +107,7 @@
 											
 											 
 										%>
-										<td><%=totalDays%></td>
+										<td><%=remaingDays%></td>
 										<td>
 												<div class="row">
 												 <button  class="btn btn-info btn-circle mr-1 btn-sm">

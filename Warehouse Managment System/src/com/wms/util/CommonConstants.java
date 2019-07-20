@@ -79,4 +79,8 @@ public class CommonConstants {
 	/** Constant for query id of get_total_days in Query.xml */
 	public static final String QUERY_ID_GET_TOTAL_DAYS = "get_total_days";
 	
+	/** Constant for query id of get_remaing_days in Query.xml */
+	public static final String QUERY_ID_GET_REMAING_DAYS = "get_remaing_days";
+	
+	
 }

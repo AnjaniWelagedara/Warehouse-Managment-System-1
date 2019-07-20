@@ -29,8 +29,14 @@ public interface IInventoryManager {
 	public void deleteItemById(String itemNo);
 	
 	/**
-	 * Get total of inventory item
+	 * Get total days of inventory item
 	 * @param itemNo
 	 */
 	public int getTotalDays(String itemNo);
+	
+	/**
+	 * Get reaming days of inventory item
+	 * @param itemNo
+	 */
+	public int getRemaingDays(String itemNo);
 }

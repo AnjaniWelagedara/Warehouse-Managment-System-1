@@ -259,4 +259,40 @@ public class InventoryManagerServices implements IInventoryManager {
 		return totalDays;
 	}
 	
+	
+	@Override
+	public int getRemaingDays(String itemNo) {
+		// TODO Auto-generated method stub
+		int remainDays = 1;
+		try {
+			
+			connection = DBConnectionUtil.getDBConnection();
+			stmt = (CallableStatement) connection.prepareCall(CommonConstants.QUERY_ID_GET_REMAING_DAYS);
+			stmt.setString(1, itemNo);
+			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
+			stmt.execute();
+			remainDays = stmt.getInt(2);
+			
+
+		} catch (SQLException | ClassNotFoundException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close prepared statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (ps != null) {
+					ps.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				log.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		
+		return remainDays;
+	}
+	
 }
