@@ -39,4 +39,12 @@ public interface IInventoryManager {
 	 * @param itemNo
 	 */
 	public int getRemaingDays(String itemNo);
+	
+	/**
+	 * Update details of inventory item
+	 * @param inventory
+	 */
+	public void updateById(Inventory inventory);
+	
+	
 }

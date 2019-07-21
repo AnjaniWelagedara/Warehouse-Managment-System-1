@@ -41,4 +41,11 @@
         ]]>
 </query>
 
+<query id="update_inventory_item">
+         <![CDATA[        
+          update Inventory
+		  set  itemName = ?, itemDescription = ?, warrenty = ?, addedDate = ?, location = ?, itemStatus = ?, owner = ?  
+		  where itemNo = ?;
+        ]]>
+</query>
 </Querys>

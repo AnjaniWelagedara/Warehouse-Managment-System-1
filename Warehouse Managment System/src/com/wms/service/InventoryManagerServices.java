@@ -294,4 +294,47 @@ public class InventoryManagerServices implements IInventoryManager {
 		return remainDays;
 	}
 	
+	
+	@Override
+	public void updateById(Inventory inventory) {
+		// TODO Auto-generated method stub
+
+				try {
+
+					connection = DBConnectionUtil.getDBConnection();
+
+					ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_UPDATE_INVENTORY_ITEM));
+					connection.setAutoCommit(false);
+
+					
+					ps.setString(CommonConstants.COLUMN_INDEX_ONE, inventory.getName());
+					ps.setString(CommonConstants.COLUMN_INDEX_TWO, inventory.getDescription());
+					ps.setString(CommonConstants.COLUMN_INDEX_THREE, inventory.getWarrentyYear());
+					ps.setString(CommonConstants.COLUMN_INDEX_FOUR, inventory.getAddedDate());
+					ps.setString(CommonConstants.COLUMN_INDEX_FIVE, inventory.getLocation());
+					ps.setString(CommonConstants.COLUMN_INDEX_SIX, inventory.getStatus());
+					ps.setString(CommonConstants.COLUMN_INDEX_SEVEN, inventory.getOwner());
+					ps.setString(CommonConstants.COLUMN_INDEX_EIGHT, inventory.getItemNo());
+					ps.execute();
+					connection.commit();
+
+				} catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
+					log.log(Level.SEVERE, e.getMessage());
+				} finally {
+					/*
+					 * Close prepared statement and database connectivity at the end of transaction
+					 */
+					try {
+						if (ps != null) {
+							ps.close();
+						}
+						if (connection != null) {
+							connection.close();
+						}
+					} catch (SQLException e) {
+						log.log(Level.SEVERE, e.getMessage());
+					}
+				}
+	}
+	
 }

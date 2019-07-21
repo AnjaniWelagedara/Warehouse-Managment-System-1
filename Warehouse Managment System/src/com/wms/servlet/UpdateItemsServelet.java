@@ -1,6 +1,8 @@
 package com.wms.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.wms.model.Inventory;
+import com.wms.service.IInventoryManager;
+import com.wms.service.InventoryManagerServices;
 
 /**
  * Servlet implementation class UpdateItemsServelet
@@ -43,6 +47,7 @@ public class UpdateItemsServelet extends HttpServlet {
 		Inventory inventory = new Inventory();
 		
 		//take values from Inventory.jsp page
+		inventory.setItemNo(request.getParameter("itemNo"));
 		inventory.setName(request.getParameter("itemName"));
 		inventory.setWarrentyYear(request.getParameter("warrentyDay"));
 		inventory.setAddedDate(request.getParameter("addedDay"));
@@ -61,6 +66,12 @@ public class UpdateItemsServelet extends HttpServlet {
 		}
 		
 		
+		IInventoryManager iInventoryManager = new InventoryManagerServices();
+		iInventoryManager.updateById(inventory);
+		
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/Inventory.jsp");
+		dispatcher.forward(request, response);
 		
 		
 		

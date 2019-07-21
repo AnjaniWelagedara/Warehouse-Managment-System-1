@@ -34,7 +34,7 @@
 									Inventory Items</div>
 							</div>
 							<div class="col-auto">
-								<i class="fas fa-list-alt fa-2x text-primary"></i>
+								<i class="fas fa-exchange-alt fa-2x text-primary"></i>
 							</div>
 						</div>
 						<div class="row ml-2">
@@ -272,7 +272,7 @@
   <div class="modal fade bd-example-modal-lg" id="deleteAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ml-10" role="document">
       <div class="modal-content">
-        <div class="modal-header" style="background-color: red;">
+        <div class="modal-header bg-danger">
         <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-minus-circle"></i> ARE YOU WANT TO DELETE ALL ITEMS</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="color: white ">&times;</span>
@@ -349,7 +349,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
 												<i class="fas fa-user text-success mt-3 mb-2"> Owner</i>
-                                                <input type="number" class="form-control" placeholder="Employee ID" name="employeeId" id="owner">
+                                                <input type="number" class="form-control" placeholder="None" name="employeeId" id="owner">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
