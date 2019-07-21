@@ -46,7 +46,6 @@ public class deleteItemByIdServlet extends HttpServlet {
 		String itemNo =  request.getParameter("itemNo");
 		IInventoryManager iInventoryManager =  new InventoryManagerServices();
 		iInventoryManager.deleteItemById(itemNo);
-		System.out.println(itemNo);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/Inventory.jsp");
 		dispatcher.forward(request, response);
 	}

@@ -66,7 +66,6 @@ public class AddItem extends HttpServlet {
 		
 		IInventoryManager iInventoryManager = new InventoryManagerServices();
 		iInventoryManager.addItems(inventory);
-		System.out.println(inventory);
 		
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/Inventory.jsp");
