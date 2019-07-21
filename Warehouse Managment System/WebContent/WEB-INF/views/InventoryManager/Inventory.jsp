@@ -37,7 +37,7 @@
 								<i class="fas fa-exchange-alt fa-2x text-primary"></i>
 							</div>
 						</div>
-						<div class="row ml-2">
+						<div class="row ml-2 pull-right">
 
 							<button class="btn btn-primary col-2 mr-2" data-toggle="modal" data-target="#exampleModalCenter">
 								<i class="fas fa-plus-circle"> Add Item</i>
@@ -83,7 +83,7 @@
 							
 								<tbody>
 									<tr id="<%= inventory.getItemNo() %>">
-										<th scope="row"><%=inventory.getItemNo()%></th>
+										<th scope="row" ><%=inventory.getItemNo()%></th>
 										<td data-target="name"><b><%=inventory.getName()%></b></td>
 										<td data-target="warrentyDay" style="display: none;"><b><%=inventory.getWarrentyYear()%></b></td>
 										<td data-target="addedDay" style="display: none;"><b><%=inventory.getAddedDate()%></b></td>
@@ -110,26 +110,26 @@
 													
 											<%if(condition >= 80){ %>
 												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-info text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  												<div class="progress-bar bg-info " role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
   													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
 												</div>					
 											<% } else if(condition >= 60){%>
 											
 												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-success text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  												<div class="progress-bar bg-success " role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
   													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
 												</div>												 
 											
 											<% } else if (condition >= 40){%>
 												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-primary text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  												<div class="progress-bar bg-primary " role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
   													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
 												</div>												
 											
 											<% } else if (condition >= 20){%>
 												
 												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-warning text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  												<div class="progress-bar bg-warning" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
   													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
 												</div>												
 											<% }else{%>
@@ -149,15 +149,9 @@
 										</td>
 										<td>
 												<div class="row">
-												 <button  class="btn btn-info btn-circle mr-1 btn-sm">
-                    								<i class="fas fa-eye"></i>
-                  								 </button>
-                  
-                  
-<!-- 								                  <button type="submit" class="btn btn-success btn-circle mr-1 btn-sm"  data-toggle="modal" data-target="#update" data-whatever="@getbootstrap"  >
-								                    <i class="far fa-edit"></i>
-								                  </button> -->
-								                  
+												 <!-- view button -->
+                  								 <a href="#" data-role="view" class="btn btn-info btn-circle mr-1 btn-sm" data-id="<%= inventory.getItemNo() %>"><i class="fas fa-eye"></i></a>
+            									<!--edit button  -->
 								                  <a href="#" data-role="update" class="btn btn-success btn-circle mr-1 btn-sm" data-id="<%= inventory.getItemNo() %>"><i class="far fa-edit"></i></a>
 								                  
                   								<form action="deleteItemByIdServlet" method="POST">
@@ -388,6 +382,81 @@
  <!--end of edit modal  -->
  
  
+ 
+ 
+ 
+ 
+  <!--view modal  -->
+   <div class="modal fade bd-example-modal-lg" id="view" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info" >
+        <h5 class="text-white" id="exampleModalCenterTitle "><i class="fas fa-eye mt-2"></i> VIEW DETAILS</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: white ">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="card">
+                            
+                            <div class="content">
+ 								<div class="container-fluid">                         
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <i class="fas fa-list-alt text-info mt-3 mb-2"> Item Name</i>
+                                                <input type="text" class="form-control"  placeholder="Enter Item Name" name="itemName" id="itemNames" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                               <i class="far fa-calendar-check text-info mt-3 mb-2"> Warranty Day</i>
+                                                <input type="date" class="form-control" name="warrentyDay" id="wrrDays" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <i class="far fa-calendar-plus text-info mt-3 mb-2"> Added Date</i>
+                                                <input type="date" class="form-control" name="addedDay" id="addDays" disabled>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+												<i class="fas fa-user text-info mt-3 mb-2"> Owner</i>
+                                                <input type="number" class="form-control" placeholder="None" name="employeeId" id="owners" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <i class="fas fa-map-marker-alt text-info mt-3 mb-2"> Location</i>
+                                                <input type="text" class="form-control" placeholder="Storage" name="location" id="stores" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <i class="far fa-sticky-note text-info mt-3 mb-2"> Item Description</i>
+                                                <textarea rows="3" class="form-control" placeholder="Here can be your description" name="description" id="dess" disabled></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+        </div>
+      </div>
+    </div>
+ 
+ <!--end of view modal  -->
+ 
   
   </div>
   </div>
@@ -423,8 +492,42 @@ $(document).ready(function(){
         
     })
 });
-</script>
 
+</script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+    $(document).on('click','a[data-role=view]',function(){
+  	 
+    	var id  = $(this).data('id');
+        var itemNos  = $('#'+id).children('td[data-target=itemNo]').text();
+        var itemNames  = $('#'+id).children('td[data-target=name]').text();
+        var wrDays  = $('#'+id).children('td[data-target=warrentyDay]').text();
+        var addDays  = $('#'+id).children('td[data-target=addedDay]').text();
+        var owners  = $('#'+id).children('td[data-target=own]').text();
+        var stores  = $('#'+id).children('td[data-target=storage]').text();
+        var dess  = $('#'+id).children('td[data-target=description]').text();
+
+        $('#itemNames').val(itemNames);
+        $('#itemNos').val(itemNos);
+        $('#wrrDays').val(wrDays);
+        $('#addDays').val(addDays);
+        $('#owners').val(owners);
+        $('#stores').val(stores);
+        $('#dess').val(dess);
+        $('#view').modal('toggle');
+  	  
+       
+        
+        
+    })
+});
+
+
+
+</script>
 
 
 
