@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.util.Iterator"%>
@@ -52,9 +53,9 @@
 						<%
 							IInventoryManager iInventoryManager = new InventoryManagerServices();
 							int totalDays, remaingDays;
-							int condition;
 							List<Inventory> itemList= iInventoryManager.getInventoryList();
 							Iterator<Inventory> it_list = itemList.iterator();
+							DecimalFormat form = new DecimalFormat("0");
 						%>
 						
 							<table class="table table-hover">
@@ -75,10 +76,9 @@
 										inventory = it_list.next();
 										totalDays = iInventoryManager.getTotalDays(inventory.getItemNo());
 										remaingDays = iInventoryManager.getRemaingDays(inventory.getItemNo());
-										 condition =(remaingDays / totalDays) * 100; 
-										 System.out.println(totalDays);
-										 System.out.println(remaingDays);
-										 System.out.println(condition);
+										double condition;
+										condition = ((double)remaingDays / totalDays)*100; 
+										 
 								%>
 							
 								<tbody>
@@ -107,8 +107,8 @@
 												
 									
 										
-										<div class="progress">
-  								<div class="progress-bar bg-info" role="progressbar" style="width: <%=condition%>%;" aria-valuenow="25" 
+										<div class="progress" style="width: 100px;">
+  								<div class="progress-bar bg-info" role="progressbar" style="width: <%=form.format(condition)%>%;" aria-valuenow="25" 
   								aria-valuemin="0" aria-valuemax="100"><%=condition%></div>
 								</div>
 										
