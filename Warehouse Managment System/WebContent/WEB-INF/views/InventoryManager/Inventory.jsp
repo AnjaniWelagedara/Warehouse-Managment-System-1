@@ -91,6 +91,11 @@
 										<td data-target="storage" style="display: none;"><b><%=inventory.getLocation()%></b></td>
 										<td data-target="description" style="display: none;"><b><%=inventory.getDescription()%></b></td>
 										<td data-target="itemNo" style="display: none;"><b><%=inventory.getItemNo()%></b></td>
+										<td data-target="remain" style="display: none;"><b><%=remaingDays%></b></td>
+										<td data-target="IItemID" style="display: none;"><b><%=inventory.getItemNo()%></b></td>
+										<td data-target="status" style="display: none;"><b><%=inventory.getStatus()%></b></td>
+										<td data-target="con" style="display: none;"><b><%=form.format(condition)%>%</b></td>
+										
 										<td><%if(inventory.getStatus().equals("Allocated")){%>
 											
 											<span class="badge badge-success">Allocated</span>
@@ -106,7 +111,7 @@
 										
 										</td>
 										
-										<td>
+										<td >
 													
 											<%if(condition >= 80){ %>
 												<div class="progress " style="width: 100px ;">
@@ -400,7 +405,22 @@
         <div class="card">
                             
                             <div class="content">
- 								<div class="container-fluid">                         
+ 								<div class="container-fluid"> 
+ 								
+ 								    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+												<i class="fas fa-file-code text-info mt-3 mb-2"> Item No</i>
+                                                <input type="text" class="form-control"  name="employeeId" id="IItemNo" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <i class="fas fa-hourglass-half text-info mt-3 mb-2"> Remaining Days For Replacement</i>
+                                                <input type="text" class="form-control" placeholder="Storage" name="location" id="rem" disabled>
+                                            </div>
+                                        </div>
+                                    </div>                    
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -437,7 +457,21 @@
                                             </div>
                                         </div>
                                     </div>
-
+									
+									<div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+												<i class="fas fa-recycle text-info mt-3 mb-2"> Status</i>
+                                                <input type="text" class="form-control" placeholder="None" name="employeeId" id="status" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <i class="fas fa-percent text-info mt-3 mb-2"> Condition</i>
+                                                <input type="text" class="form-control"  id="con" disabled>
+                                            </div>
+                                        </div>
+                                    </div>	
                                    
                                     <div class="row">
                                         <div class="col-md-12">
@@ -502,21 +536,27 @@ $(document).ready(function(){
     $(document).on('click','a[data-role=view]',function(){
   	 
     	var id  = $(this).data('id');
-        var itemNos  = $('#'+id).children('td[data-target=itemNo]').text();
         var itemNames  = $('#'+id).children('td[data-target=name]').text();
         var wrDays  = $('#'+id).children('td[data-target=warrentyDay]').text();
         var addDays  = $('#'+id).children('td[data-target=addedDay]').text();
         var owners  = $('#'+id).children('td[data-target=own]').text();
         var stores  = $('#'+id).children('td[data-target=storage]').text();
         var dess  = $('#'+id).children('td[data-target=description]').text();
+        var rem  = $('#'+id).children('td[data-target=remain]').text();
+        var itemNos  = $('#'+id).children('td[data-target=IItemID]').text();
+        var status  = $('#'+id).children('td[data-target=status]').text();
+        var con  = $('#'+id).children('td[data-target=con]').text();
 
         $('#itemNames').val(itemNames);
-        $('#itemNos').val(itemNos);
         $('#wrrDays').val(wrDays);
         $('#addDays').val(addDays);
         $('#owners').val(owners);
         $('#stores').val(stores);
         $('#dess').val(dess);
+        $('#rem').val(rem);
+        $('#IItemNo').val(itemNos);
+        $('#status').val(status);
+        $('#con').val(con);
         $('#view').modal('toggle');
   	  
        
