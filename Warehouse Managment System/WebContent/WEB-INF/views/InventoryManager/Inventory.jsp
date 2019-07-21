@@ -402,13 +402,24 @@ $(document).ready(function(){
     $(document).on('click','a[data-role=update]',function(){
   	 
     	var id  = $(this).data('id');
-        var firstName  = $('#'+id).children('td[data-target=name]').text();
-        var wrDay  = $('#'+id).children('td[data-target=date]').text();
+        var itemName  = $('#'+id).children('td[data-target=name]').text();
+        var wrDay  = $('#'+id).children('td[data-target=warrentyDay]').text();
+        var addDay  = $('#'+id).children('td[data-target=addedDay]').text();
+        var owner  = $('#'+id).children('td[data-target=owner]').text();
+        var store  = $('#'+id).children('td[data-target=storage]').text();
+        var des  = $('#'+id).children('td[data-target=description]').text();
 
-        $('#mId').val(firstName);
+        $('#itemName').val(itemName);
         $('#wrrDay').val(wrDay);
+        $('#addDay').val(addDay);
+        $('#owner').val(owner);
+        $('#store').val(store);
+        $('#des').val(des);
         $('#update').modal('toggle');
   	  
+       
+        
+        
     })
 });
 </script>
