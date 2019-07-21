@@ -95,18 +95,8 @@
 											}
 										%>
 										
-										
-										
-										
-										
-										
-										
 										</td>
 										
-										<%
-											
-											 
-										%>
 										<td><%=remaingDays%></td>
 										<td>
 												<div class="row">
