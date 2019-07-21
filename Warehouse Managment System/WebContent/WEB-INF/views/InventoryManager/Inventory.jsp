@@ -311,7 +311,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header bg-success" >
-        <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-plus mt-2"></i>UPDATE</h5>
+        <h5 class="text-white" id="exampleModalCenterTitle"><i class="far fa-edit mt-2"></i> UPDATE</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="color: white ">&times;</span>
           </button>
@@ -370,7 +370,7 @@
                                     </div>
 									<div class="row">	
 										<div class="">
-                                    		<button type="submit" class="btn btn-success"><i class="fas fa-plus-circle "></i> Update</button>
+                                    		<button type="submit" class="btn btn-success"><i class="fas fa-edit "></i> Update	</button>
                                     	</div>
                                     </div>
                                 </form>
