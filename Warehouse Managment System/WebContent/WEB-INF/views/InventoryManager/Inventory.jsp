@@ -87,9 +87,10 @@
 										<td data-target="name"><b><%=inventory.getName()%></b></td>
 										<td data-target="warrentyDay" style="display: none;"><b><%=inventory.getWarrentyYear()%></b></td>
 										<td data-target="addedDay" style="display: none;"><b><%=inventory.getAddedDate()%></b></td>
-										<td data-target="owner" style="display: none;"><b><%=inventory.getOwner()%></b></td>
+										<td data-target="own" style="display: none;"><b><%=inventory.getOwner()%></b></td>
 										<td data-target="storage" style="display: none;"><b><%=inventory.getLocation()%></b></td>
 										<td data-target="description" style="display: none;"><b><%=inventory.getDescription()%></b></td>
+										<td data-target="itemNo" style="display: none;"><b><%=inventory.getItemNo()%></b></td>
 										<td><%if(inventory.getStatus().equals("Allocated")){%>
 											
 											<span class="badge badge-success">Allocated</span>
@@ -321,7 +322,7 @@
                             
                             <div class="content">
  								<div class="container-fluid">                         
-                                <form method="POST" action="AddItem">
+                                <form method="POST" action="UpdateItemsServelet">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -373,6 +374,8 @@
                                     		<button type="submit" class="btn btn-success"><i class="fas fa-edit "></i> Update	</button>
                                     	</div>
                                     </div>
+                                    
+                                    <input type="hidden" class="form-control" placeholder="Storage" name="itemNo" id="itemNo">
                                 </form>
                                 </div>  
                             </div>
@@ -398,14 +401,16 @@ $(document).ready(function(){
     $(document).on('click','a[data-role=update]',function(){
   	 
     	var id  = $(this).data('id');
+        var itemNo  = $('#'+id).children('td[data-target=itemNo]').text();
         var itemName  = $('#'+id).children('td[data-target=name]').text();
         var wrDay  = $('#'+id).children('td[data-target=warrentyDay]').text();
         var addDay  = $('#'+id).children('td[data-target=addedDay]').text();
-        var owner  = $('#'+id).children('td[data-target=owner]').text();
+        var owner  = $('#'+id).children('td[data-target=own]').text();
         var store  = $('#'+id).children('td[data-target=storage]').text();
         var des  = $('#'+id).children('td[data-target=description]').text();
 
         $('#itemName').val(itemName);
+        $('#itemNo').val(itemNo);
         $('#wrrDay').val(wrDay);
         $('#addDay').val(addDay);
         $('#owner').val(owner);
