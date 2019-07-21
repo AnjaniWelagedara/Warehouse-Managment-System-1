@@ -236,7 +236,7 @@ public class InventoryManagerServices implements IInventoryManager {
 			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
 			stmt.execute();
 			totalDays = stmt.getInt(2);
-			
+			System.out.println(totalDays);
 
 		} catch (SQLException | ClassNotFoundException e) {
 			log.log(Level.SEVERE, e.getMessage());
@@ -272,7 +272,7 @@ public class InventoryManagerServices implements IInventoryManager {
 			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
 			stmt.execute();
 			remainDays = stmt.getInt(2);
-			
+			System.out.println(remainDays);
 
 		} catch (SQLException | ClassNotFoundException e) {
 			log.log(Level.SEVERE, e.getMessage());

@@ -28,7 +28,7 @@
 						<div class="row">
 							<div class="col mr-1">
 								<div
-									class="h5 text-primary mb-0 text-uppercase font-weight-bold">All
+									class="h5 text-primary mb-0 text-uppercase font-weight-bold">Replacing 
 									Inventory Items</div>
 							</div>
 							<div class="col-auto">
@@ -74,7 +74,7 @@
 										inventory = it_list.next();
 										totalDays = iInventoryManager.getTotalDays(inventory.getItemNo());
 										remaingDays = iInventoryManager.getRemaingDays(inventory.getItemNo());
-										/* condition = (remaingDays / totalDays) * 100; */
+										 condition = (remaingDays / totalDays) * 100; 
 								%>
 							
 								<tbody>
@@ -97,7 +97,7 @@
 										
 										</td>
 										
-										<td><%=remaingDays%></td>
+										<td><%=condition%>%</td>
 										<td>
 												<div class="row">
 												 <button  class="btn btn-info btn-circle mr-1 btn-sm">
