@@ -109,7 +109,7 @@
 										
 										<div class="progress" style="width: 100px;">
   								<div class="progress-bar bg-info" role="progressbar" style="width: <%=form.format(condition)%>%;" aria-valuenow="25" 
-  								aria-valuemin="0" aria-valuemax="100"><%=condition%></div>
+  								aria-valuemin="0" aria-valuemax="100"><%=form.format(condition)%></div>
 								</div>
 										
 									
