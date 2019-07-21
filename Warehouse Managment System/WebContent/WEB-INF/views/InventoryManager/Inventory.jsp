@@ -85,7 +85,11 @@
 									<tr id="<%= inventory.getItemNo() %>">
 										<th scope="row"><%=inventory.getItemNo()%></th>
 										<td data-target="name"><b><%=inventory.getName()%></b></td>
-										<td data-target="date" style="display: none;"><b><%=inventory.getWarrentyYear()%></b></td>
+										<td data-target="warrentyDay" style="display: none;"><b><%=inventory.getWarrentyYear()%></b></td>
+										<td data-target="addedDay" style="display: none;"><b><%=inventory.getAddedDate()%></b></td>
+										<td data-target="owner" style="display: none;"><b><%=inventory.getOwner()%></b></td>
+										<td data-target="storage" style="display: none;"><b><%=inventory.getLocation()%></b></td>
+										<td data-target="description" style="display: none;"><b><%=inventory.getDescription()%></b></td>
 										<td><%if(inventory.getStatus().equals("Allocated")){%>
 											
 											<span class="badge badge-success">Allocated</span>
