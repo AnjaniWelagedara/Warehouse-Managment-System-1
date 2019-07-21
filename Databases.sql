@@ -63,12 +63,21 @@ SELECT DATEDIFF('2020-10-30', '2020-10-28') AS 'Result';
 select * from inventory;
 
 DELIMITER //  
-CREATE PROCEDURE GetRemaingDays(IN IItemNOrem VARCHAR(20), OUT remainDays INT)
+CREATE PROCEDURE GetRemaingDays(IN IItemNumber VARCHAR(20), OUT remainDays INT)
 BEGIN
-    select DATEDIFF(warrenty, CURDATE()) into remainDays from Inventory where itemNo = IItemNOrem;
+    select DATEDIFF(warrenty, CURDATE()) into remainDays from Inventory where itemNo = IItemNumber;
 END//
 DELIMITER ;
 
-set @IItemNOrem = 'ITM-03';
-CALL `itppro`.`GetRemaingDays`(@IItemNOrem, @remainDays);
+set @IItemNumber = 'ITM-03';
+CALL `itppro`.`GetRemaingDays`(@IItemNumber, @remainDays);
 select @remainDays;
+
+select curdate();
+
+update Inventory
+set  itemName = ?, itemDescription = ?, warrenty = ?, addedDate = ?, location = ?, itemStatus = ?, owner = ?  
+where itemNo = ?;
+
+
+
