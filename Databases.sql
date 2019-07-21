@@ -48,25 +48,27 @@ DELIMITER ;
 
 
 DELIMITER //  
-CREATE PROCEDURE ToalDay(IN ItemNO VARCHAR(20), OUT totalDays INT)
+CREATE PROCEDURE ToalDay(IN IItemNO VARCHAR(20), OUT totalDays INT)
 BEGIN
-    select DATEDIFF(warrenty, addedDate) from Inventory where itemNo = ItemNO;
+    select DATEDIFF(warrenty, addedDate) into totalDays from Inventory where itemNo = IItemNO;
 END//
 DELIMITER ;
 
-call ToalDaysss('ITM-01',@totalDays);
+set @IItemNO = 'ITM-03';
+CALL `itppro`.`ToalDay`(@IItemNO, @totalDays);
+select @totalDays;
 
 SELECT DATEDIFF('2020-10-30', '2020-10-28') AS 'Result';
 
 select * from inventory;
 
 DELIMITER //  
-create view showadd(wrr,addaa)
-as
-begin 
-	declare wrDay date;
-    declare adDay date;
-    select wrDay = warrenty ,adDay = addedDate from Inventory where itemNo = ItemNO;
+CREATE PROCEDURE GetRemaingDays(IN IItemNOrem VARCHAR(20), OUT remainDays INT)
+BEGIN
+    select DATEDIFF(warrenty, CURDATE()) into remainDays from Inventory where itemNo = IItemNOrem;
 END//
 DELIMITER ;
-select warrenty ,addedDate,DATEDIFF(warrenty, addedDate)from Inventory;
+
+set @IItemNOrem = 'ITM-03';
+CALL `itppro`.`GetRemaingDays`(@IItemNOrem, @remainDays);
+select @remainDays;

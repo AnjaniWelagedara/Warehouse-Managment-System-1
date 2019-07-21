@@ -231,7 +231,7 @@ public class InventoryManagerServices implements IInventoryManager {
 		try {
 			
 			connection = DBConnectionUtil.getDBConnection();
-			stmt = (CallableStatement) connection.prepareCall(CommonConstants.QUERY_ID_GET_TOTAL_DAYS);
+			stmt = (CallableStatement) connection.prepareCall("{call ToalDay(?,?)}");
 			stmt.setString(1, itemNo);
 			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
 			stmt.execute();
@@ -267,7 +267,7 @@ public class InventoryManagerServices implements IInventoryManager {
 		try {
 			
 			connection = DBConnectionUtil.getDBConnection();
-			stmt = (CallableStatement) connection.prepareCall(CommonConstants.QUERY_ID_GET_REMAING_DAYS);
+			stmt = (CallableStatement) connection.prepareCall("{call GetRemaingDays(?,?)}");
 			stmt.setString(1, itemNo);
 			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
 			stmt.execute();
