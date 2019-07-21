@@ -102,15 +102,42 @@
 										</td>
 										
 										<td>
-										
-										
+													
+											<%if(condition >= 80){ %>
+												<div class="progress " style="width: 100px ;">
+  												<div class="progress-bar bg-info text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
+												</div>					
+											<% } else if(condition >= 60){%>
+											
+												<div class="progress " style="width: 100px ;">
+  												<div class="progress-bar bg-success text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
+												</div>												 
+											
+											<% } else if (condition >= 40){%>
+												<div class="progress " style="width: 100px ;">
+  												<div class="progress-bar bg-primary text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
+												</div>												
+											
+											<% } else if (condition >= 20){%>
+												
+												<div class="progress " style="width: 100px ;">
+  												<div class="progress-bar bg-warning text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
+												</div>												
+											<% }else{%>
+												<div class="progress " style="width: 100px ;">
+  												<div class="progress-bar bg-danger text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
+  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
+												</div>												
+											
+											<%} %>
 												
 									
 										
-										<div class="progress" style="width: 100px;">
-  								<div class="progress-bar bg-info" role="progressbar" style="width: <%=form.format(condition)%>%;" aria-valuenow="25" 
-  								aria-valuemin="0" aria-valuemax="100"><%=form.format(condition)%></div>
-								</div>
+										
 										
 									
 										
