@@ -188,7 +188,7 @@
   <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header" style="background-color: blue;">
+        <div class="modal-header" style="background-color:blue;">
         <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-plus mt-2"></i> ADD NEW ITEM </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="color: white ">&times;</span>
@@ -310,8 +310,8 @@
    <div class="modal fade bd-example-modal-lg" id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header" style="background-color: blue;">
-        <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-plus mt-2"></i> ADD NEW ITEM </h5>
+        <div class="modal-header bg-success" >
+        <h5 class="text-white" id="exampleModalCenterTitle"><i class="fas fa-plus mt-2"></i>UPDATE</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="color: white ">&times;</span>
           </button>
@@ -325,19 +325,19 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <i class="fas fa-list-alt text-primary mt-3 mb-2"> Item Name</i>
+                                                <i class="fas fa-list-alt text-success mt-3 mb-2"> Item Name</i>
                                                 <input type="text" class="form-control"  placeholder="Enter Item Name" name="itemName" id="itemName">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                               <i class="far fa-calendar-check text-primary mt-3 mb-2"> Warranty Day</i>
+                                               <i class="far fa-calendar-check text-success mt-3 mb-2"> Warranty Day</i>
                                                 <input type="date" class="form-control" name="warrentyDay" id="wrrDay">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <i class="far fa-calendar-plus text-primary mt-3 mb-2"> Added Date</i>
+                                                <i class="far fa-calendar-plus text-success mt-3 mb-2"> Added Date</i>
                                                 <input type="date" class="form-control" name="addedDay" id="addDay">
                                             </div>
                                         </div>
@@ -347,13 +347,13 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-												<i class="fas fa-user text-primary mt-3 mb-2"> Owner</i>
+												<i class="fas fa-user text-success mt-3 mb-2"> Owner</i>
                                                 <input type="number" class="form-control" placeholder="Employee ID" name="employeeId" id="owner">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <i class="fas fa-map-marker-alt text-primary mt-3 mb-2"> Location</i>
+                                                <i class="fas fa-map-marker-alt text-success mt-3 mb-2"> Location</i>
                                                 <input type="text" class="form-control" placeholder="Storage" name="location" id="store">
                                             </div>
                                         </div>
@@ -363,14 +363,14 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <i class="far fa-sticky-note text-primary mt-3 mb-2"> Item Description</i>
+                                                <i class="far fa-sticky-note text-success mt-3 mb-2"> Item Description</i>
                                                 <textarea rows="3" class="form-control" placeholder="Here can be your description" name="description" id="des"></textarea>
                                             </div>
                                         </div>
                                     </div>
 									<div class="row">	
 										<div class="">
-                                    		<button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle "></i> Add Item</button>
+                                    		<button type="submit" class="btn btn-success"><i class="fas fa-plus-circle "></i> Update</button>
                                     	</div>
                                     </div>
                                 </form>
