@@ -52,7 +52,7 @@
 						<%
 							IInventoryManager iInventoryManager = new InventoryManagerServices();
 							int totalDays, remaingDays;
-							double condition;
+							int condition;
 							List<Inventory> itemList= iInventoryManager.getInventoryList();
 							Iterator<Inventory> it_list = itemList.iterator();
 						%>
@@ -75,7 +75,9 @@
 										inventory = it_list.next();
 										totalDays = iInventoryManager.getTotalDays(inventory.getItemNo());
 										remaingDays = iInventoryManager.getRemaingDays(inventory.getItemNo());
-										 condition = (remaingDays / totalDays) * 100; 
+										 condition =(remaingDays / totalDays) * 100; 
+										 System.out.println(totalDays);
+										 System.out.println(remaingDays);
 										 System.out.println(condition);
 								%>
 							

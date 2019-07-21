@@ -49,7 +49,7 @@ public class InventoryManagerServices implements IInventoryManager {
 					connection.setAutoCommit(false);
 
 					inventory.setItemNo(itemNo);
-				
+					System.out.println(itemNo);
 					ps.setString(CommonConstants.COLUMN_INDEX_ONE, inventory.getItemNo());
 					ps.setString(CommonConstants.COLUMN_INDEX_TWO, inventory.getName());
 					ps.setString(CommonConstants.COLUMN_INDEX_THREE, inventory.getDescription());
@@ -231,12 +231,12 @@ public class InventoryManagerServices implements IInventoryManager {
 		try {
 			
 			connection = DBConnectionUtil.getDBConnection();
-			stmt = (CallableStatement) connection.prepareCall("{call ToalDay(?,?)}");
+			stmt = (CallableStatement) connection.prepareCall(" {call ToalDay(?,?)}");
 			stmt.setString(1, itemNo);
 			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
 			stmt.execute();
 			totalDays = stmt.getInt(2);
-			System.out.println(totalDays);
+			
 
 		} catch (SQLException | ClassNotFoundException e) {
 			log.log(Level.SEVERE, e.getMessage());
@@ -272,7 +272,7 @@ public class InventoryManagerServices implements IInventoryManager {
 			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
 			stmt.execute();
 			remainDays = stmt.getInt(2);
-			System.out.println(remainDays);
+			
 
 		} catch (SQLException | ClassNotFoundException e) {
 			log.log(Level.SEVERE, e.getMessage());
