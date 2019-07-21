@@ -76,6 +76,7 @@
 										totalDays = iInventoryManager.getTotalDays(inventory.getItemNo());
 										remaingDays = iInventoryManager.getRemaingDays(inventory.getItemNo());
 										 condition = (remaingDays / totalDays) * 100; 
+										 System.out.println(condition);
 								%>
 							
 								<tbody>
