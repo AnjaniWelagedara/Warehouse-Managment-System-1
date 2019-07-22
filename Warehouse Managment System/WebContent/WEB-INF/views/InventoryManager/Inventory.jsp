@@ -288,7 +288,7 @@
         
         	<div class="row ml-5">
         		<div class="mr-5">
-        		<form action="deleteAllItemsServlet" method="POST">
+        		<form action="deleteAllItemsServlet?action=RP" method="POST">
         		<button type="submit"  class="btn btn-danger btn-icon-split ">
                     <span class="icon text-white-100">
                       <i class="fas fa-trash"></i>
