@@ -287,7 +287,7 @@
                             
                             <div class="content">
  								<div class="container-fluid">                         
-                                <form method="POST" action="UpdateItemsServelet">
+                                <form method="POST" action="UpdateItemsServelet?action=RF">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -440,7 +440,6 @@ $(document).ready(function(){
     	var id  = $(this).data('id');
         var itemNo  = $('#'+id).children('td[data-target=itemNo]').text();
         var itemName  = $('#'+id).children('td[data-target=name]').text();
-        var wrDay  = $('#'+id).children('td[data-target=warrentyDay]').text();
         var addDay  = $('#'+id).children('td[data-target=addedDay]').text();
         var owner  = $('#'+id).children('td[data-target=own]').text();
         var store  = $('#'+id).children('td[data-target=storage]').text();
@@ -448,7 +447,6 @@ $(document).ready(function(){
 
         $('#itemName').val(itemName);
         $('#itemNo').val(itemNo);
-        $('#wrrDay').val(wrDay);
         $('#addDay').val(addDay);
         $('#owner').val(owner);
         $('#store').val(store);
@@ -471,26 +469,20 @@ $(document).ready(function(){
   	 
     	var id  = $(this).data('id');
         var itemNames  = $('#'+id).children('td[data-target=name]').text();
-        var wrDays  = $('#'+id).children('td[data-target=warrentyDay]').text();
         var addDays  = $('#'+id).children('td[data-target=addedDay]').text();
         var owners  = $('#'+id).children('td[data-target=own]').text();
         var stores  = $('#'+id).children('td[data-target=storage]').text();
         var dess  = $('#'+id).children('td[data-target=description]').text();
-        var rem  = $('#'+id).children('td[data-target=remain]').text();
         var itemNos  = $('#'+id).children('td[data-target=IItemID]').text();
         var status  = $('#'+id).children('td[data-target=status]').text();
-        var con  = $('#'+id).children('td[data-target=con]').text();
 
         $('#itemNames').val(itemNames);
-        $('#wrrDays').val(wrDays);
         $('#addDays').val(addDays);
         $('#owners').val(owners);
         $('#stores').val(stores);
         $('#dess').val(dess);
-        $('#rem').val(rem);
         $('#IItemNo').val(itemNos);
         $('#status').val(status);
-        $('#con').val(con);
         $('#view').modal('toggle');
   	  
        

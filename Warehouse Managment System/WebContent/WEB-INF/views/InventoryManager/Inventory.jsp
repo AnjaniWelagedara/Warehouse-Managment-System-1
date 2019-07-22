@@ -328,7 +328,7 @@
                             
                             <div class="content">
  								<div class="container-fluid">                         
-                                <form method="POST" action="UpdateItemsServelet">
+                                <form method="POST" action="UpdateItemsServelet?action=RP">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
