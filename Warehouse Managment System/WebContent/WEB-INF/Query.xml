@@ -19,7 +19,8 @@
 
 <query id="delete_all_items">
          <![CDATA[        
-            delete from Inventory;
+            delete from Inventory
+            where itemType = ?;
         ]]>
 </query>
 

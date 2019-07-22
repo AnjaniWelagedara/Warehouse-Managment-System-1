@@ -15,12 +15,12 @@ public interface IInventoryManager {
 	/**
 	 * get all in Inventory table
 	 */
-	public ArrayList<Inventory> getInventoryList();
+	public ArrayList<Inventory> getInventoryList(String type);
 	
 	/**
 	 * delete all Inventory Items
 	 */
-	public void deleteAllItems();
+	public void deleteAllItems(String type);
 	
 	/**
 	 * Add assignments

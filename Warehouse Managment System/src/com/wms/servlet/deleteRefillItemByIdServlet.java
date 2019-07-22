@@ -13,16 +13,16 @@ import com.wms.service.IInventoryManager;
 import com.wms.service.InventoryManagerServices;
 
 /**
- * Servlet implementation class deleteItemByIdServlet
+ * Servlet implementation class deleteRefillItemByIdServlet
  */
-@WebServlet("/deleteItemByIdServlet")
-public class deleteItemByIdServlet extends HttpServlet {
+@WebServlet("/deleteRefillItemByIdServlet")
+public class deleteRefillItemByIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public deleteItemByIdServlet() {
+    public deleteRefillItemByIdServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,22 +42,11 @@ public class deleteItemByIdServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		//delete selected item by using ID
-		String itemNo =  request.getParameter("itemNo");
 		IInventoryManager iInventoryManager =  new InventoryManagerServices();
-		iInventoryManager.deleteItemById(itemNo);
+		iInventoryManager.deleteAllItems("Refil");
 		
-		String action = request.getParameter("action");
-		
-		if(action.equals("RP")) {
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/Inventory.jsp");
-			dispatcher.forward(request, response);
-		}
-		
-		if(action.equals("RF")) {
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/InventoryForRefil.jsp");
-			dispatcher.forward(request, response);
-		}
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/InventoryForRefil.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

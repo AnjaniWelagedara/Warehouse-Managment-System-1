@@ -53,7 +53,7 @@
 						<%
 							IInventoryManager iInventoryManager = new InventoryManagerServices();
 							int totalDays, remaingDays;
-							List<Inventory> itemList= iInventoryManager.getInventoryList();
+							List<Inventory> itemList= iInventoryManager.getInventoryList("Replace");
 							Iterator<Inventory> it_list = itemList.iterator();
 							DecimalFormat form = new DecimalFormat("0");
 						%>
@@ -166,7 +166,7 @@
             									<!--edit button  -->
 								                  <a href="#" data-role="update" class="btn btn-success btn-circle mr-1 btn-sm" data-id="<%= inventory.getItemNo() %>"><i class="far fa-edit"></i></a>
 								                  
-                  								<form action="deleteItemByIdServlet" method="POST">
+                  								<form action="deleteItemByIdServlet?action=RP" method="POST">
                   								  <input type="hidden" name="itemNo" value="<%=inventory.getItemNo()%>">
 								                  <button type="submit" class="btn btn-danger btn-circle btn-sm">
 								                    <i class="fas fa-trash"></i>

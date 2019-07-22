@@ -114,7 +114,7 @@ public class InventoryManagerServices implements IInventoryManager {
 	
 	
 	@Override
-	public ArrayList<Inventory> getInventoryList() {
+	public ArrayList<Inventory> getInventoryList(String type) {
 
 		ArrayList<Inventory> list = new ArrayList<Inventory>();
 
@@ -164,13 +164,14 @@ public class InventoryManagerServices implements IInventoryManager {
 	}
 	
 	@Override
-	public void deleteAllItems() {
+	public void deleteAllItems(String type) {
 		// TODO Auto-generated method stub
 		try {
 
 			connection = DBConnectionUtil.getDBConnection();
 
 			ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_DELETE_ALL_ITEMS));
+			ps.setString(1, type);
 			ps.execute();
 
 		} catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {

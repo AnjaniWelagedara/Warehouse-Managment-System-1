@@ -44,7 +44,7 @@ public class deleteAllItemsServlet extends HttpServlet {
 		
 		//delete all items from Inventory Table
 		IInventoryManager iInventoryManager =  new InventoryManagerServices();
-		iInventoryManager.deleteAllItems();
+		iInventoryManager.deleteAllItems("Replace");
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/InventoryManager/Inventory.jsp");
 		dispatcher.forward(request, response);
