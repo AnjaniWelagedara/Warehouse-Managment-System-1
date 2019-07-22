@@ -170,21 +170,16 @@
                             
                             <div class="content">
  								<div class="container-fluid">                         
-                                <form method="POST" action="AddItem">
+                                <form method="POST" action="AddRefillingItem">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <i class="fas fa-list-alt text-primary mt-3 mb-2"> Item Name</i>
                                                 <input type="text" class="form-control"  placeholder="Enter Item Name" name="itemName">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                               <i class="far fa-calendar-check text-primary mt-3 mb-2"> Warranty Day</i>
-                                                <input type="date" class="form-control" name="warrentyDay">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
+                            
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <i class="far fa-calendar-plus text-primary mt-3 mb-2"> Added Date</i>
                                                 <input type="date" class="form-control" name="addedDay">
@@ -294,19 +289,14 @@
  								<div class="container-fluid">                         
                                 <form method="POST" action="UpdateItemsServelet">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <i class="fas fa-list-alt text-success mt-3 mb-2"> Item Name</i>
                                                 <input type="text" class="form-control"  placeholder="Enter Item Name" name="itemName" id="itemName">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                               <i class="far fa-calendar-check text-success mt-3 mb-2"> Warranty Day</i>
-                                                <input type="date" class="form-control" name="warrentyDay" id="wrrDay">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <i class="far fa-calendar-plus text-success mt-3 mb-2"> Added Date</i>
                                                 <input type="date" class="form-control" name="addedDay" id="addDay">
