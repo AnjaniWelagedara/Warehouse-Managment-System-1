@@ -64,8 +64,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Inventory Products:</h6>
-            <a class="collapse-item" data-toggle="modal" href="#addItem">Add New Item</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <a class=" collapse-item" href="\Inventory.jsp">Replacing Inventory Items</a>
+            <a class="collapse-item" >Cards</a>
           </div>
         </div>
       </li>
