@@ -9,6 +9,7 @@ public class Inventory {
 	private String owner;
 	private String location;
 	private String status;
+	private String type;
 
 	public String getItemNo() {
 		return itemNo;
@@ -73,14 +74,27 @@ public class Inventory {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	@Override
 	public String toString() {
 		return "Inventory [itemNo=" + itemNo + ", name=" + name + ", description=" + description + ", warrentyYear="
 				+ warrentyYear + ", addedDate=" + addedDate + ", owner=" + owner + ", location=" + location
-				+ ", status=" + status + "]";
+				+ ", status=" + status + ", type=" + type + "]";
 	}
+	
+	
 
+	
 	
 
 }

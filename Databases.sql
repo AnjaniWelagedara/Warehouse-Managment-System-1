@@ -18,7 +18,7 @@ create table QuotationRequestsDetails(
 	constraint QRDPK primary key (quoaDeId),
     constraint QRDFK foreign key (quoaId) references QuotationRequests(quoaId)
 );
-
+drop table inventory;
 create table Inventory(
 	itemNo varchar(20),
     itemName varchar(100),
@@ -28,6 +28,7 @@ create table Inventory(
     location varchar(50),
     itemStatus varchar(20) default "Unallocate",
     owner varchar(20),
+    itemType varchar(10) check ('Refil' or "Replace"),
     constraint INPK primary key (itemNo)
 );
 
