@@ -53,6 +53,7 @@ public class AddItem extends HttpServlet {
 		inventory.setOwner(request.getParameter("employeeId"));
 		inventory.setLocation(request.getParameter("location"));
 		inventory.setDescription(request.getParameter("description"));
+		inventory.setType("Replace");
 		
 		if(!((request.getParameter("employeeId").isEmpty()))) {
 			inventory.setStatus("Allocated");

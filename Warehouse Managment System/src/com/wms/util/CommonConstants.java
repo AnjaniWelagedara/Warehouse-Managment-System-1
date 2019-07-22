@@ -55,6 +55,8 @@ public class CommonConstants {
 	/** Constant for Column index eight */
 	public static final int COLUMN_INDEX_EIGHT = 8;
 	
+	/** Constant for Column index nine */
+	public static final int COLUMN_INDEX_NINE = 9;
 	
 	
 	/**

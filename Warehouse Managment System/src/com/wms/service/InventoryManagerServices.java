@@ -57,6 +57,7 @@ public class InventoryManagerServices implements IInventoryManager {
 					ps.setString(CommonConstants.COLUMN_INDEX_SIX, inventory.getLocation());
 					ps.setString(CommonConstants.COLUMN_INDEX_SEVEN, inventory.getStatus());
 					ps.setString(CommonConstants.COLUMN_INDEX_EIGHT, inventory.getOwner());
+					ps.setString(CommonConstants.COLUMN_INDEX_NINE, inventory.getType());
 					ps.execute();
 					connection.commit();
 

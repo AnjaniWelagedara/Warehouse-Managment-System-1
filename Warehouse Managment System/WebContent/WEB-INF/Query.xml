@@ -12,8 +12,8 @@
 
 <query id="add_inventory_table">
          <![CDATA[        
-            insert into Inventory(itemNo, itemName, itemDescription, warrenty, addedDate, location, itemStatus, owner ) 
-            values(?,?,?,?,?,?,?,?);
+            insert into Inventory(itemNo, itemName, itemDescription, warrenty, addedDate, location, itemStatus, owner, itemType ) 
+            values(?,?,?,?,?,?,?,?,?);
         ]]>
 </query>
 
