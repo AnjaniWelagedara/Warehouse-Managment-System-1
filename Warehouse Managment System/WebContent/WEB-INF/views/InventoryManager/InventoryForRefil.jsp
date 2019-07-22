@@ -34,7 +34,7 @@
 									Inventory Items</div>
 							</div>
 							<div class="col-auto">
-								<i class="fas fa-exchange-alt fa-2x text-primary"></i>
+								<i class="fas fa-recycle fa-2x text-primary"></i>
 							</div>
 						</div>
 						<div class="row ml-2 pull-right">
@@ -367,34 +367,22 @@
                             
                             <div class="content">
  								<div class="container-fluid"> 
- 								
- 								    <div class="row">
-                                        <div class="col-md-6">
+ 								                   
+                                    <div class="row">
+                                    <div class="col-md-4">
                                             <div class="form-group">
 												<i class="fas fa-file-code text-info mt-3 mb-2"> Item No</i>
                                                 <input type="text" class="form-control"  name="employeeId" id="IItemNo" disabled>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <i class="fas fa-hourglass-half text-info mt-3 mb-2"> Remaining Days For Replacement</i>
-                                                <input type="text" class="form-control" placeholder="Storage" name="location" id="rem" disabled>
-                                            </div>
-                                        </div>
-                                    </div>                    
-                                    <div class="row">
+                                        
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <i class="fas fa-list-alt text-info mt-3 mb-2"> Item Name</i>
                                                 <input type="text" class="form-control"  placeholder="Enter Item Name" name="itemName" id="itemNames" disabled>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                               <i class="far fa-calendar-check text-info mt-3 mb-2"> Warranty Day</i>
-                                                <input type="date" class="form-control" name="warrentyDay" id="wrrDays" disabled>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <i class="far fa-calendar-plus text-info mt-3 mb-2"> Added Date</i>
@@ -419,21 +407,6 @@
                                         </div>
                                     </div>
 									
-									<div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-												<i class="fas fa-recycle text-info mt-3 mb-2"> Status</i>
-                                                <input type="text" class="form-control" placeholder="None" name="employeeId" id="status" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <i class="fas fa-percent text-info mt-3 mb-2"> Condition</i>
-                                                <input type="text" class="form-control"  id="con" disabled>
-                                            </div>
-                                        </div>
-                                    </div>	
-                                   
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">

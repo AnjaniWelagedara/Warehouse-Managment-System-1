@@ -10,6 +10,13 @@
         ]]>
 </query>
 
+<query id="get_inventory_items_by_type">
+         <![CDATA[        
+            select * from Inventory
+             where itemType = ?;
+        ]]>
+</query>
+
 <query id="add_inventory_table">
          <![CDATA[        
             insert into Inventory(itemNo, itemName, itemDescription, warrenty, addedDate, location, itemStatus, owner, itemType ) 

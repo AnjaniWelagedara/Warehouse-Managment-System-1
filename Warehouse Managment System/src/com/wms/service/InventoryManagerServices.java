@@ -121,8 +121,8 @@ public class InventoryManagerServices implements IInventoryManager {
 		try {
 			connection = DBConnectionUtil.getDBConnection();
 
-			ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_INVENTORY_TABLE_ENTRY_COUNT));
-
+			ps = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_INVENTORY_ITM_BY_TYPE));
+			ps.setString(1, type);
 			rs = ps.executeQuery();
 
 			while (rs.next()) {

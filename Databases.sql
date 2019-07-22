@@ -80,5 +80,8 @@ update Inventory
 set  itemName = ?, itemDescription = ?, warrenty = ?, addedDate = ?, location = ?, itemStatus = ?, owner = ?  
 where itemNo = ?;
 
+update Inventory
+set  itemType = 'Replace'
+where itemNo = 'ITM-01';
 
 
