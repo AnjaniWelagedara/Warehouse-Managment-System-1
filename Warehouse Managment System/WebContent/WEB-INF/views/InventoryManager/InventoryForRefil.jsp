@@ -30,7 +30,7 @@
 						<div class="row">
 							<div class="col mr-1">
 								<div
-									class="h5 text-primary mb-0 text-uppercase font-weight-bold">Replacing 
+									class="h5 text-primary mb-0 text-uppercase font-weight-bold">Refilling 
 									Inventory Items</div>
 							</div>
 							<div class="col-auto">
@@ -52,7 +52,6 @@
 						
 						<%
 							IInventoryManager iInventoryManager = new InventoryManagerServices();
-							int totalDays, remaingDays;
 							List<Inventory> itemList= iInventoryManager.getInventoryList();
 							Iterator<Inventory> it_list = itemList.iterator();
 							DecimalFormat form = new DecimalFormat("0");
@@ -63,8 +62,8 @@
 									<tr>
 										<th scope="col">Item No</th>
 										<th scope="col">Name</th>
+										<th scope="col">Owner</th>
 										<th scope="col">Status</th>
-										<th scope="col">Condition</th>
 										<th scope="col">Actions</th>
 									</tr>
 								</thead>
@@ -74,15 +73,6 @@
 									while (it_list.hasNext()) {
 										Inventory inventory =  new Inventory();
 										inventory = it_list.next();
-										totalDays = iInventoryManager.getTotalDays(inventory.getItemNo());
-										remaingDays = iInventoryManager.getRemaingDays(inventory.getItemNo());
-										double condition;
-										if(remaingDays == 0 || remaingDays < 0){
-											condition = 0;
-										}
-										else{
-											condition = ((double)remaingDays / totalDays) * 100; 
-										}
 										
 										
 										 
@@ -98,10 +88,24 @@
 										<td data-target="storage" style="display: none;"><b><%=inventory.getLocation()%></b></td>
 										<td data-target="description" style="display: none;"><b><%=inventory.getDescription()%></b></td>
 										<td data-target="itemNo" style="display: none;"><b><%=inventory.getItemNo()%></b></td>
-										<td data-target="remain" style="display: none;"><b><%=remaingDays%></b></td>
 										<td data-target="IItemID" style="display: none;"><b><%=inventory.getItemNo()%></b></td>
 										<td data-target="status" style="display: none;"><b><%=inventory.getStatus()%></b></td>
-										<td data-target="con" style="display: none;"><b><%=form.format(condition)%>%</b></td>
+										
+										
+										<td>
+										
+												<%if(inventory.getStatus().equals("Allocated")){ %>
+												Emp-<%=inventory.getOwner() %>
+											
+											<% 
+												}else{
+												
+											%>
+												<%=inventory.getOwner() %>
+											<% 
+												}
+											%>
+										</td>
 										
 										<td><%if(inventory.getStatus().equals("Allocated")){%>
 											
@@ -118,47 +122,7 @@
 										
 										</td>
 										
-										<td >
-													
-											<%if(condition >= 80){ %>
-												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-info " role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
-  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
-												</div>					
-											<% } else if(condition >= 60){%>
-											
-												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-success " role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
-  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
-												</div>												 
-											
-											<% } else if (condition >= 40){%>
-												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-primary " role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
-  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
-												</div>												
-											
-											<% } else if (condition >= 20){%>
-												
-												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-warning" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
-  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
-												</div>												
-											<% }else{%>
-												<div class="progress " style="width: 100px ;">
-  												<div class="progress-bar bg-danger text-dark" role="progressbar" style="width: <%=form.format(condition)%>%" aria-valuenow="25" 
-  													aria-valuemin="0" aria-valuemax="100" ><%=form.format(condition)%>%</div>
-												</div>												
-											
-											<%} %>
-												
-									
 										
-										
-										
-									
-										
-										</td>
 										<td>
 												<div class="row">
 												 <!-- view button -->
