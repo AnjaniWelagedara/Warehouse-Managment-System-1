@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="WEB-INF\views\InventoryManager\InventoryForRefil.jsp"></jsp:include>
- 	<%-- <jsp:include page="WEB-INF\views\InventoryManager\Inventory.jsp"></jsp:include> --%>
+	<%-- <jsp:include page="WEB-INF\views\InventoryManager\InventoryForRefil.jsp"></jsp:include> --%>
+ 	 <jsp:include page="WEB-INF\views\InventoryManager\Inventory.jsp"></jsp:include>
 	<!--  -->
 </body>
 </html>
