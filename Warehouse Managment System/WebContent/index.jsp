@@ -9,6 +9,7 @@
 <body>
 	<%-- <jsp:include page="WEB-INF\views\InventoryManager\InventoryForRefil.jsp"></jsp:include> --%>
  	 <jsp:include page="WEB-INF\views\InventoryManager\Inventory.jsp"></jsp:include>
-	<!--  -->
+	
+	<!--  check all-->
 </body>
 </html>
