@@ -84,4 +84,7 @@ update Inventory
 set  itemType = 'Replace'
 where itemNo = 'ITM-01';
 
-create table supplier()
+create table supplier(
+	supplierID varchar(20),
+	constraint STFK primary key(supplierID)
+);
