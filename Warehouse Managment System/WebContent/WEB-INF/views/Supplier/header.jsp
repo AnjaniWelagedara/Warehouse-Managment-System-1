@@ -44,7 +44,7 @@
       <li class="nav-item">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Supplier</span></a>
       </li>
 
       <!-- Divider -->
@@ -59,12 +59,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>Products</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <h6 class="collapse-header">Product Components:</h6>
+            <a class="collapse-item" data-toggle="modal" href="#addModal">Add Product</a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
@@ -74,12 +74,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <span>Services</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <h6 class="collapse-header">Service Components:</h6>
+            <a class="collapse-item" data-toggle="modal"href="#mymodal">Add Services</a>
             <a class="collapse-item" href="utilities-border.html">Borders</a>
             <a class="collapse-item" href="utilities-animation.html">Animations</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>
@@ -99,12 +99,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Packages</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
+            <h6 class="collapse-header">Package Details:</h6>
+            <a class="collapse-item" data-toggle="modal"href="#pkgmodal">Add Packages</a>
             <a class="collapse-item" href="register.html">Register</a>
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
             <div class="collapse-divider"></div>
@@ -327,5 +327,349 @@
           </ul>
 
         </nav>
+        
+        
+        
+        
+        
+        
+        
+        <div class="modal fade" id="pkgmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Packages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      
+      <div class="container">
+	<div class="row">
+  		<div class="col-md-12">
+   		<h1>Supplier Add Packages</h1>
+      	</div>
+  	</div>
+
+
+
+
+
+</div>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-8">
+    <h1>Adding Packages</h1>
+    </div>
+  </div>
+  
+    
+  
+<div class="row">
+  
+  <div class="col-md-8">
+  <form role="form">
+    
+   <select class="form-control" id="productSelect"><option>Select a Package Type</option>
+      <option>Product Packages</option>
+      <option>Service Packages</option>
+      
+    </select>
+    
+   
+    
+ <div class="form-group">
+   <label for="productname" class="loginFormElement">Package Id</label>
+   <input class="form-control" id="productname" type="email">
+ </div>
+    
+ <div class="form-group">
+   <label for="productprice" class="loginFormElement">Package Name</label>
+   <input class="form-control" id="productprice" type="email">
+ </div>
+ 
+ 
+ 
+  <div class="form-group">
+      <label class="loginformelement" for="productdescription">Package Description</label>
+  	  <input id="productdescription" class="form-control input-lg" placeholder="Large" type="text"><div class="container">
+      </div>
+ 
+    <button type="submit" id="loginSubmit" class="btn btn-success loginFormElement">Add Package</button>
+  
+    </div></form>
+    
+    </div>
+  
+  
+  
+
+  
+  
+  
+
+  
+  </div>
+  
+  <!-- /.container -->
+
+</div>
+
+
+            <div id="push"></div>
+        
+      
+      
+      
+ 
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        
+       
+        
+        
+
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Services</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      
+      <div class="container">
+	<div class="row">
+  		<div class="col-md-12">
+   		<h1>Supplier Add Services</h1>
+      	</div>
+  	</div>
+
+
+
+
+
+</div>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-8">
+    <h1>Adding Service</h1>
+    </div>
+  </div>
+  
+    
+  
+<div class="row">
+  
+  <div class="col-md-8">
+  <form role="form">
+    
+  
+  <div class="form-group">
+   <label for="productname" class="loginFormElement">Service Name</label>
+   <input class="form-control" id="productname" type="email">
+ </div>
+    
+    
+ <div class="form-group">
+   <label for="productname" class="loginFormElement">Service Id</label>
+   <input class="form-control" id="productname" type="email">
+ </div>
+    
+ <div class="form-group">
+   <label for="productprice" class="loginFormElement">Service Price</label>
+   <input class="form-control" id="productprice" type="email">
+ </div>
+ 
+ <div class="form-group">
+   <label for="productprice" class="loginFormElement">Amount of Hours</label>
+   <input class="form-control" id="productprice" type="email">
+ </div>
+ 
+ 
+ 
+ 
+   
+
+
+    
+    <div class="form-group">
+      <label class="loginformelement" for="productdescription">Service Description</label>
+  	  <input id="productdescription" class="form-control input-lg" placeholder="Large" type="text"><div class="container">
+      </div>
+ 
+    <button type="submit" id="loginSubmit" class="btn btn-success loginFormElement">Add Service</button>
+  
+    </div></form>
+    
+    </div>
+  
+  
+  
+
+  
+  
+  
+
+  
+  </div>
+  
+  <!-- /.container -->
+
+</div>
+
+
+            <div id="push"></div>
+        
+      
+      
+      
+ 
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        
+       
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Products</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="container">
+	<div class="row">
+  		<div class="col-md-12">
+   		<h1>Supplier Add Product</h1>
+      	</div>
+  	</div>
+
+
+
+
+
+</div>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-8">
+    <h1>Adding Product</h1>
+    </div>
+  </div>
+  
+    
+  
+<div class="row">
+  
+  <div class="col-md-8">
+  <form role="form">
+    
+    <div class="form-group">
+   <label for="productname" class="loginFormElement">Product Name</label>
+   <input class="form-control" id="productname" type="email">
+ </div>
+    
+ <div class="form-group">
+   <label for="productname" class="loginFormElement">Product Id</label>
+   <input class="form-control" id="productname" type="email">
+ </div>
+    
+ <div class="form-group">
+   <label for="productprice" class="loginFormElement">Product Price</label>
+   <input class="form-control" id="productprice" type="email">
+ </div>
+ 
+ <div class="form-group">
+   <label for="productprice" class="loginFormElement">Quantity</label>
+   <input class="form-control" id="productprice" type="email">
+ </div>
+ 
+ 
+ <div class="form-group">
+   <label for="productprice" class="loginFormElement">Warranty</label>
+   <input class="form-control" id="productprice" type="email">
+ </div>
+ 
+   
+
+<div class="form-group">
+ 
+<label class="control-label">Product Image</label>
+ 
+<input class="filestyle" data-icon="false" type="file">
+ 
+</div>
+    
+    <div class="form-group">
+      <label class="loginformelement" for="productdescription">yu</label>
+  	  <input id="productdescription" class="form-control input-lg" placeholder="Large" type="text"><div class="container">
+      </div>
+ 
+    <button type="submit" id="loginSubmit" class="btn btn-success loginFormElement">Add Product</button>
+  
+    </div></form>
+    
+    </div>
+  
+  
+  
+
+  
+  
+  
+
+  
+  </div>
+  
+  <!-- /.container -->
+
+</div>
+
+
+            <div id="push"></div>
+        
+      
+      
+      
+ 
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
         <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 </html>

@@ -8,8 +8,10 @@
 </head>
 <body>
 	<%-- <jsp:include page="WEB-INF\views\InventoryManager\InventoryForRefil.jsp"></jsp:include> --%>
- 	 <jsp:include page="WEB-INF\views\InventoryManager\Inventory.jsp"></jsp:include>
-	
+ 	 <%-- <jsp:include page="WEB-INF\views\InventoryManager\Inventory.jsp"></jsp:include> --%>
+ 	 
+ 	 <jsp:include page="WEB-INF\views\Supplier\Display.jsp"></jsp:include>
+
 	
 </body>
 </html>
